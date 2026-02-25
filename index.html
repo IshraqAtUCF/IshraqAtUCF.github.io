@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ishraq Tashdid | Academic Website</title>
+  <meta name="description" content="Ishraq Tashdid - Ph.D. student at UCF working on hardware security, formal verification, and LLM-assisted vulnerability reasoning." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">Ishraq Tashdid</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Ph.D. Student • UCF ECE</p>
+        <h1>Ishraq Tashdid</h1>
+        <p class="hero-sub">
+          Hardware security, formal verification, and LLM-assisted threat modeling across
+          hardware–firmware–software boundaries.
+        </p>
+
+        <div class="hero-meta">
+          <a href="mailto:tashdid.ishraq@gmail.com">tashdid.ishraq@gmail.com</a>
+          <span>•</span>
+          <a href="mailto:ishraq.tashdid@ucf.edu">ishraq.tashdid@ucf.edu</a>
+          <span>•</span>
+          <span>Orlando, FL</span>
+        </div>
+
+        <div class="tag-row" aria-label="Research tags">
+          <span class="tag">SoC Security</span>
+          <span class="tag">Formal Verification</span>
+          <span class="tag">Threat Modeling (CWE/CVE/CAPEC)</span>
+          <span class="tag">LLM-assisted Security Reasoning</span>
+          <span class="tag">Chiplet / SiP Authentication</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>About</h2>
+          <p>
+            I am a Ph.D. student in Computer Engineering at the University of Central Florida.
+            My work focuses on building practical, automation-driven security verification flows
+            for modern SoCs, with an emphasis on LLM-guided threat modeling, assertion generation,
+            and formal proof.
+          </p>
+          <p>
+            I also work on chiplet/System-in-Package authentication and secure hardware design,
+            combining hardware security ideas with verification and systems thinking.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Current Focus</h2>
+          <ul class="clean-list">
+            <li>ATLAS: AI-assisted threat-to-assertion learning for SoC security verification</li>
+            <li>System-level harness generation and security property quality checking</li>
+            <li>InterPUF: distributed chiplet/interposer authentication using PUF + MPC</li>
+            <li>Formal verification workflows with JasperGold and static/AST-driven reasoning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <h2 class="section-title">Highlights</h2>
+        <div class="cards-3">
+          <article class="card">
+            <h3>DAC 2026</h3>
+            <p>
+              <strong>ATLAS</strong> accepted at DAC 2026 for AI-assisted threat modeling and
+              formal security verification for SoCs.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>HOST 2026</h3>
+            <p>
+              <strong>InterPUF</strong> accepted at HOST 2026 for distributed chiplet/interposer
+              authentication using PUFs and MPC.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>MLCAD 2025</h3>
+            <p>
+              <strong>BeyondPPA</strong> was a <strong>Best Paper Nominee</strong> for
+              reliability-aware macro placement using human-inspired RL.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <h2 class="section-title">Selected Publications</h2>
+        <div class="card">
+          <ul class="pub-list">
+            <li>
+              <strong>ATLAS</strong> — DAC 2026 (Accepted)
+            </li>
+            <li>
+              <strong>InterPUF</strong> — HOST 2026 (Accepted)
+            </li>
+            <li>
+              <strong>BeyondPPA</strong> — MLCAD 2025 (Best Paper Nominee)
+            </li>
+            <li>
+              <strong>ECOLogic</strong> — ICCD 2025
+            </li>
+            <li>
+              <strong>SAFE-SiP</strong> — GLSVLSI 2025
+            </li>
+          </ul>
+          <p class="small-note">
+            Full list and details available in the <a href="cv.html">CV</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- News section kept at the bottom -->
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">News</h2>
+          <p class="section-subtitle">
+            Latest updates on papers, talks, awards, and milestones.
+          </p>
+        </div>
+
+        <div id="latest-news-card" class="latest-news-card" aria-live="polite"></div>
+
+        <div class="news-list-wrap">
+          <ul id="news-list" class="news-list" aria-label="News updates"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Ishraq Tashdid</p>
+      <p class="footer-links">
+        <a href="cv.html">CV</a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="news.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

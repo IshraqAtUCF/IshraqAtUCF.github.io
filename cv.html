@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Ishraq Tashdid</title>
+  <meta name="description" content="Curriculum Vitae of Ishraq Tashdid" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">Ishraq Tashdid</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html" class="active" aria-current="page">CV</a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="cv-header-row">
+          <div>
+            <p class="eyebrow">Curriculum Vitae</p>
+            <h1 class="page-title">CV</h1>
+            <p class="page-subtitle">
+              Embedded PDF version of my academic CV.
+            </p>
+          </div>
+          <div class="cv-actions">
+            <a class="btn" href="assets/Ishraq_Tashdid_CV.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            <a class="btn btn-outline" href="assets/Ishraq_Tashdid_CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+
+        <div class="cv-frame card">
+          <object
+            data="assets/Ishraq_Tashdid_CV.pdf"
+            type="application/pdf"
+            width="100%"
+            height="900"
+            aria-label="Embedded CV PDF"
+          >
+            <div class="pdf-fallback">
+              <p>Your browser could not display the PDF inline.</p>
+              <p>
+                Please use:
+                <a href="assets/Ishraq_Tashdid_CV.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+                or
+                <a href="assets/Ishraq_Tashdid_CV.pdf" download>Download CV</a>.
+              </p>
+            </div>
+          </object>
+        </div>
+
+        <div class="card note-box">
+          <h2>How to update the CV</h2>
+          <p>
+            Compile your LaTeX CV into a PDF and replace
+            <code>assets/Ishraq_Tashdid_CV.pdf</code>. The website will automatically show the new version.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Ishraq Tashdid</p>
+      <p class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
