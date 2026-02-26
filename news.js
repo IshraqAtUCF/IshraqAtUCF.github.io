@@ -1,3 +1,6 @@
+// Edit this list to add news.
+// The site automatically sorts by sortDate (latest first).
+// "start with trustees" is included below as an early milestone.
 const newsItems = [
   {
     sortDate: "2024-01-15",
@@ -88,3 +91,47 @@ const newsItems = [
       "ATLAS: AI-Assisted Threat-to-Assertion Learning for SoC Security Verification accepted to DAC 2026 (63rd Design Automation Conference), Long Beach, CA."
   }
 ];
+function sortNewsDescending(items) {
+  return [...items].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
+}
+function renderLatestNews(items) {
+  const container = document.getElementById("latest-news-card");
+  if (!container || items.length === 0) return;
+  const latest = items[0];
+  container.innerHTML = 
+    <div class="latest-news-inner">
+      <span class="latest-badge">Latest News</span>
+      <h3 class="latest-title">${latest.title}</h3>
+      <div class="latest-meta">
+        <span class="news-tag">${latest.category}</span>
+        <span>${latest.dateLabel}</span>
+      </div>
+      <p class="latest-desc">${latest.description}</p>
+    </div>
+  ;
+}
+function renderNewsList(items) {
+  const list = document.getElementById("news-list");
+  if (!list) return;
+  list.innerHTML = items
+    .map(
+      (item) => 
+      <li class="news-item">
+        <div class="news-row">
+          <p class="news-title">${item.title}</p>
+          <span class="news-date">${item.dateLabel}</span>
+        </div>
+        <div class="news-meta-line">
+          <span class="news-tag">${item.category}</span>
+        </div>
+        <div class="news-desc">${item.description}</div>
+      </li>
+    
+    )
+    .join("");
+}
+(function initNews() {
+  const sorted = sortNewsDescending(newsItems);
+  renderLatestNews(sorted);
+  renderNewsList(sorted);
+})();
