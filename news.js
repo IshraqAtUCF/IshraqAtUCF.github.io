@@ -1,5 +1,8 @@
 // Edit this list to add news.
 // The site automatically sorts by sortDate (latest first).
+// You can optionally "pin" one item as the Latest News card
+// by setting: isPinnedLatest: true
+
 const newsItems = [
   {
     sortDate: "2024-01-15",
@@ -57,14 +60,18 @@ const newsItems = [
     description:
       "Served as an external reviewer for the IEEE International Conference on Computer Design (ICCD) 2025."
   },
+
+  // ✅ Pinned Latest News (shows in the "Latest News" card regardless of date)
   {
     sortDate: "2026-02-10",
     dateLabel: "Feb 2026",
     category: "Talk",
     title: "Invited talk at Intel AI Forum",
     description:
-      "Presented ATLAS and discussed LLM-driven threat modeling and formal security verification for SoC security to Intel's AI research community."
+      "Presented ATLAS and discussed LLM-driven threat modeling and formal security verification for SoC security to Intel's AI research community.",
+    isPinnedLatest: true
   },
+
   {
     sortDate: "2026-02-15",
     dateLabel: "Feb 2026",
@@ -80,34 +87,40 @@ const newsItems = [
     title: "InterPUF accepted at IEEE HOST 2026",
     description:
       "InterPUF — distributed chiplet/interposer authentication using physically unclonable functions and multi-party computation — accepted to IEEE HOST 2026, Washington, D.C."
-  },
-  {
-    sortDate: "2026-02-23",
-    dateLabel: "Feb 2026",
-    category: "Publication",
-    title: "ATLAS accepted at DAC 2026",
-    description:
-      "ATLAS: AI-Assisted Threat-to-Assertion Learning for SoC Security Verification accepted to DAC 2026 (63rd Design Automation Conference), Long Beach, CA."
   }
+
+  // Commented out for now per request:
+  // {
+  //   sortDate: "2026-02-23",
+  //   dateLabel: "Feb 2026",
+  //   category: "Publication",
+  //   title: "ATLAS accepted at DAC 2026",
+  //   description:
+  //     "ATLAS: AI-Assisted Threat-to-Assertion Learning for SoC Security Verification accepted to DAC 2026 (63rd Design Automation Conference), Long Beach, CA."
+  // }
 ];
 
 function sortNewsDescending(items) {
   return [...items].sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
 }
 
-function renderLatestNews(items) {
+function getPinnedLatest(items) {
+  return items.find((item) => item.isPinnedLatest === true) || null;
+}
+
+function renderLatestNews(item) {
   const container = document.getElementById("latest-news-card");
-  if (!container || items.length === 0) return;
-  const latest = items[0];
+  if (!container || !item) return;
+
   container.innerHTML = `
     <div class="latest-news-inner">
       <span class="latest-badge">Latest News</span>
-      <h3 class="latest-title">${latest.title}</h3>
+      <h3 class="latest-title">${item.title}</h3>
       <div class="latest-meta">
-        <span class="news-tag">${latest.category}</span>
-        <span>${latest.dateLabel}</span>
+        <span class="news-tag">${item.category}</span>
+        <span>${item.dateLabel}</span>
       </div>
-      <p class="latest-desc">${latest.description}</p>
+      <p class="latest-desc">${item.description}</p>
     </div>
   `;
 }
@@ -115,6 +128,7 @@ function renderLatestNews(items) {
 function renderNewsList(items) {
   const list = document.getElementById("news-list");
   if (!list) return;
+
   list.innerHTML = items
     .map(
       (item) => `
@@ -134,7 +148,16 @@ function renderNewsList(items) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const sorted = sortNewsDescending(newsItems);
-  renderLatestNews(sorted);
-  renderNewsList(sorted);
+  const pinned = getPinnedLatest(newsItems);
+
+  // Build the list items: sort all items except the pinned one (avoid duplication)
+  const listItems = sortNewsDescending(
+    pinned ? newsItems.filter((item) => item !== pinned) : newsItems
+  );
+
+  // Latest card: pinned if present, otherwise the newest item from the sorted list
+  const latestItem = pinned || listItems[0] || null;
+
+  renderLatestNews(latestItem);
+  renderNewsList(listItems);
 });
