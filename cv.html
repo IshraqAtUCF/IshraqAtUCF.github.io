@@ -28,39 +28,17 @@
             <p class="eyebrow">Curriculum Vitae</p>
             <h1 class="page-title">CV</h1>
             <p class="page-subtitle">
-              PDF version + a quick HTML summary below.
+              Detailed overview (downloadable PDF available).
             </p>
           </div>
           <div class="cv-actions">
-            <a class="btn" href="assets/Ishraq_Tashdid_CV.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
-            <a class="btn btn-outline" href="assets/Ishraq_Tashdid_CV.pdf" download>Download CV</a>
+            <a class="btn btn-outline" href="assets/Ishraq_Tashdid_CV.pdf" download>Download CV (PDF)</a>
           </div>
         </div>
 
-        <!-- Embedded PDF -->
-        <div class="cv-frame card">
-          <object
-            data="assets/Ishraq_Tashdid_CV.pdf"
-            type="application/pdf"
-            width="100%"
-            height="900"
-            aria-label="Embedded CV PDF"
-          >
-            <div class="pdf-fallback">
-              <p>Your browser could not display the PDF inline.</p>
-              <p>
-                Please use:
-                <a href="assets/Ishraq_Tashdid_CV.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
-                or
-                <a href="assets/Ishraq_Tashdid_CV.pdf" download>Download CV</a>.
-              </p>
-            </div>
-          </object>
-        </div>
-
-        <!-- HTML summary (based on your LaTeX CV) -->
+        <!-- Detailed HTML CV (based on your LaTeX CV) -->
         <section class="section section-tight">
-          <h2 class="section-title">CV Summary</h2>
+          <h2 class="section-title">Overview</h2>
 
           <div class="card">
             <h3>Contact</h3>
@@ -88,88 +66,148 @@
             <h3>Education</h3>
             <ul class="clean-list">
               <li>
-                <strong>University of Central Florida (UCF)</strong> — Ph.D. in Computer Engineering (Joint PhD/MS)
+                <strong>University of Central Florida (UCF)</strong>
                 <span class="small-note"> (Jan 2024–Present)</span><br />
-                Trustee's Doctoral Fellow • CGPA: <strong>4.00/4.00</strong>
+                Ph.D. in Computer Engineering (Joint PhD/MS)<br />
+                <a href="https://www.ece.ucf.edu/doctoral-student-earns-ucf-trustee-fellowship/" target="_blank" rel="noopener noreferrer">
+                  <u>Trustee's Doctoral Fellow</u>
+                </a>
+                • CGPA: <strong>4.00/4.00</strong>
               </li>
               <li>
-                <strong>Bangladesh University of Engineering and Technology (BUET)</strong> — B.Sc. in Electrical and Electronic Engineering
+                <strong>Bangladesh University of Engineering and Technology (BUET)</strong>
                 <span class="small-note"> (Feb 2017–Jun 2022)</span><br />
-                CGPA: 3.48/4.00
+                B.Sc. in Electrical and Electronic Engineering • CGPA: 3.48/4.00
               </li>
             </ul>
           </div>
 
           <div class="card">
             <h3>Research Experience</h3>
-            <p class="small-note"><strong>Graduate Research Assistant</strong> — University of Central Florida (Jan 2024–Present)</p>
+            <p class="small-note">
+              <strong>Graduate Research Assistant</strong> — University of Central Florida
+              <span class="small-note"> (Jan 2024–Present)</span>
+            </p>
             <ul class="clean-list">
-              <!-- Commented out ATLAS bullet for now -->
+              <!-- ATLAS / DAC intentionally hidden for now -->
               <!--
               <li>
-                <strong>LLM-driven threat modeling & automated vulnerability reasoning (DAC 2026):</strong>
-                Built <em>ATLAS</em>, a framework that ingests CWE/CVE/CAPEC databases, generates structured threat models,
-                translates them into formal security properties, and verifies them with JasperGold. Detected 39/48 known CWEs
-                across HACK@DAC benchmarks (>82% correct property generation).
+                <strong>LLM-driven threat modeling & automated vulnerability reasoning:</strong>
+                Built <em>ATLAS</em>, a framework that ingests CWE/CVE/CAPEC vulnerability databases,
+                auto-generates structured threat models for any SoC asset, and translates them into formal
+                security properties verified by JasperGold. Detected 39/48 known CWEs across three HACK@DAC
+                benchmarks (>82% correct property generation). Directly applicable to firmware and software
+                vulnerability workflows that reason over the same threat taxonomies.
               </li>
               -->
               <li>
                 <strong>Automated security property generation & cross-abstraction analysis:</strong>
-                Built pipelines combining static analysis, AST-level reasoning, execution traces, and formal feedback to generate
-                precise security assertions with minimal manual effort.
+                Developed pipelines combining static analysis, AST-level structural reasoning, execution traces,
+                and formal verification feedback to generate precise security assertions with minimal human effort,
+                reducing reliance on manually crafted security rules at every abstraction layer from RTL through
+                system firmware.
               </li>
               <li>
                 <strong>Chiplet authentication via PUF and MPC (HOST 2026):</strong>
-                Designed <em>InterPUF</em>, a distributed authentication framework for reconfigurable SiP interposers using a
-                differential delay PUF and MPC so raw signatures never leave the device. Achieved &lt;0.23% area and
-                &lt;0.072% power overhead; ML modeling attacks ~47% (random-guess level).
+                Designed <em>InterPUF</em>, a distributed authentication framework for reconfigurable System-in-Package (SiP)
+                interposers. Embedded a differential delay PUF in the interconnect fabric and secured evaluation using
+                multi-party computation (MPC), ensuring raw signatures never leave the device. Achieved &lt;0.23% area and
+                &lt;0.072% power overhead; ML modeling attacks converged at ~47% accuracy (random-guess level).
               </li>
               <li>
                 <strong>Macro placement automation (MLCAD 2025 — Best Paper Nominee):</strong>
-                Designed human-inspired RL frameworks for floorplanning to improve post-route routability and reliability in heterogeneous SoCs.
+                Designed human-inspired reinforcement learning frameworks for chip floorplanning to improve post-route
+                routability and reliability in heterogeneous SoCs.
               </li>
             </ul>
           </div>
 
           <div class="card">
             <h3>Industry Experience</h3>
-            <p class="small-note"><strong>Hardware Verification Engineer</strong> — XCelerium, Irvine, CA (Jan 2022–Dec 2023)</p>
+            <p class="small-note">
+              <strong>Hardware Verification Engineer</strong> — <a href="https://xcelerium.com/" target="_blank" rel="noopener noreferrer">XCelerium</a>, Irvine, CA
+              <span class="small-note"> (Jan 2022–Dec 2023)</span>
+            </p>
             <ul class="clean-list">
-              <li>Verified custom <strong>RISC-V</strong> processor implementations at ISA and system level using SystemVerilog, UVM, and cocotb.</li>
-              <li>Verified <strong>AXI memory controllers</strong> and <strong>APB–AXI bridges</strong>, including CDC edge cases and assertion-based checks.</li>
-              <li>Built <strong>Python-driven automation</strong> for coverage convergence, orchestration, and results analysis.</li>
+              <li>
+                Verified custom <strong>RISC-V</strong> processor implementations at the ISA and <strong>system level</strong>
+                using SystemVerilog, UVM, and cocotb — building familiarity with the hardware–software boundary where
+                firmware executes and privilege/mode transitions occur.
+              </li>
+              <li>
+                Verified <strong>AXI memory controllers</strong> and <strong>APB–AXI bridges</strong>, including CDC edge cases and
+                assertion-based checks on bus-level access control — the same protocol surfaces targeted by firmware and
+                software security assessments.
+              </li>
+              <li>
+                Built <strong>Python-driven automation frameworks</strong> for coverage convergence, testbench orchestration,
+                and results analysis, accelerating sign-off across multiple projects.
+              </li>
             </ul>
           </div>
 
           <div class="card">
             <h3>Selected Publications</h3>
             <ul class="pub-list">
-              <!-- Commented out ATLAS entry for now -->
-              <!-- <li><strong>ATLAS</strong> — DAC 2026 (Accepted)</li> -->
-              <li><strong>InterPUF</strong> — HOST 2026 (Accepted)</li>
-              <li><strong>BeyondPPA</strong> — MLCAD 2025 (Best Paper Nominee)</li>
-              <li><strong>ECOLogic</strong> — ICCD 2025</li>
-              <li><strong>SAFE-SiP</strong> — GLSVLSI 2025</li>
-              <li><strong>AuthenTree</strong> — PAINE 2025</li>
-              <li><strong>Book Chapter (invited):</strong> LLM for SoC Design and Security — in preparation (2025)</li>
+              <!-- DAC intentionally hidden for now -->
+              <!--
+              <li>
+                <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
+                <em>“ATLAS: AI-Assisted Threat-to-Assertion Learning for System-on-Chip Security Verification,”</em>
+                <strong>DAC 2026</strong>, Long Beach, CA, USA. <em>Accepted.</em>
+              </li>
+              -->
+              <li>
+                <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
+                <em>“InterPUF: Distributed Authentication via Physically Unclonable Functions and Multi-party Computation for Reconfigurable Interposers,”</em>
+                <strong>HOST 2026</strong> (IEEE Int'l Symposium on Hardware Oriented Security and Trust), Washington, D.C., USA. <em>Accepted.</em>
+              </li>
+              <li>
+                <strong>Ishraq Tashdid</strong>, Dewan Saiham, Nafisa Anjum, Tasnuva Farheen, Sazadur Rahman,
+                <em>“ECOLogic: Enabling Circular, Obfuscated, and Adaptive Logic via eFPGA-Augmented SoCs,”</em>
+                <strong>ICCD 2025</strong>, Dallas, TX, USA.
+              </li>
+              <li>
+                <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
+                <em>“SAFE-SiP: Secure Authentication Framework for System-in-Package Using Multi-party Computation,”</em>
+                <strong>GLSVLSI 2025</strong>, New Orleans, LA, USA.
+              </li>
+              <li>
+                <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
+                <em>“AuthenTree: A Scalable MPC-Based Distributed Trust Architecture for Chiplet-based Heterogeneous Systems,”</em>
+                <strong>PAINE 2025</strong>, Denver, CO, USA.
+              </li>
+              <li>
+                <strong>Ishraq Tashdid</strong>, Valentina Terry, Jordan Merkel, Tasnuva Farheen, Sazadur Rahman,
+                <em>“BeyondPPA: Human-Inspired Reinforcement Learning for Post-Route Reliability-Aware Macro Placement,”</em>
+                <strong>MLCAD 2025</strong>, Santa Cruz, CA, USA. <u><strong>Best Paper Nominee.</strong></u>
+              </li>
+              <li>
+                <strong>Book Chapter (invited):</strong> <em>LLM for SoC Design and Security</em> — with UF collaborators, <em>in preparation</em>, 2025.
+              </li>
             </ul>
-            <p class="small-note">
-              For full author lists and bib details, see the PDF above.
-            </p>
           </div>
 
           <div class="card">
             <h3>Teaching & Mentoring</h3>
+            <p class="small-note">
+              <strong>Graduate Teaching Assistant</strong> — UCF ECE
+              <span class="small-note"> (Spring 2024; Summer & Fall 2025)</span>
+            </p>
             <ul class="clean-list">
               <li>
-                <strong>Graduate Teaching Assistant</strong> — UCF ECE
-                <span class="small-note"> (Spring 2024; Summer & Fall 2025)</span><br />
-                Engineering Analysis and Computation; Linear Systems II; Electronics II Lab; Digital Systems Lab.
+                Grading and office hours for Engineering Analysis and Computation; Linear Systems II; Electronics II Lab; Digital Systems Lab.
               </li>
+            </ul>
+
+            <p class="small-note" style="margin-top: 10px;">
+              <strong>Undergraduate Mentoring</strong>
+              <span class="small-note"> (Aug 2024–Present)</span>
+            </p>
+            <ul class="clean-list">
               <li>
-                <strong>Undergraduate Mentoring</strong>
-                <span class="small-note"> (Aug 2024–Present)</span><br />
-                Mentored two undergraduate researchers; internships at AMD and Northrop Grumman; co-authored the MLCAD 2025 Best Paper Nominee.
+                Mentored two undergraduate researchers; both earned summer 2025 internships at <strong>AMD</strong> and
+                <strong>Northrop Grumman</strong> and co-authored the MLCAD 2025 Best Paper Nominee.
               </li>
             </ul>
           </div>
@@ -179,11 +217,12 @@
             <ul class="clean-list">
               <li>
                 <strong>Intel AI Forum</strong> <span class="small-note">(Feb 2026)</span><br />
-                Invited talk on LLM-driven threat modeling and formal security verification for SoC security.
+                Invited talk on LLM-driven threat modeling and formal security verification for SoC security — presented to Intel's AI research community.
               </li>
               <li>
                 <strong>Florida Semiconductor Summit (FSI)</strong> <span class="small-note">(Feb 2026)</span><br />
                 Invited presentation at the 4th Annual Florida Semiconductor Summit, Rosen Shingle Creek, Orlando, FL.
+                Theme: <em>Semiconductor Manufacturing in Florida: Power. Progress. Possibilities.</em>
               </li>
             </ul>
           </div>
@@ -201,9 +240,9 @@
           <div class="card">
             <h3>Skills</h3>
             <div class="small-note" style="margin-top: 8px;">
-              <p><strong>Security & Analysis:</strong> Threat modeling (CWE/CVE/CAPEC), LLM-assisted vulnerability reasoning, ABV, formal verification (JasperGold), static analysis</p>
+              <p><strong>Security & Analysis:</strong> Threat modeling (CWE/CVE/CAPEC), LLM-assisted vulnerability reasoning, assertion-based verification, formal verification (JasperGold), static analysis</p>
               <p><strong>Programming:</strong> Python, SystemVerilog, Verilog, C, MATLAB, Assembly</p>
-              <p><strong>Verification:</strong> UVM, cocotb, pytest, ABV; RISC-V ISA & system-level compliance; AXI/APB protocols</p>
+              <p><strong>Verification:</strong> UVM, cocotb, pytest, ABV; RISC-V ISA & system-level compliance; AXI/APB bus protocols</p>
               <p><strong>EDA & Simulation:</strong> Cadence Innovus / Genus / JasperGold, ModelSim, Quartus Prime, Yosys, PyVerilog</p>
             </div>
           </div>
