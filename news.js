@@ -31,7 +31,7 @@ const newsItems = [
   {
     sortDate: "2025-09-09",
     dateLabel: "Sep 2025",
-    category: "Publication",
+    category: "Award",
     title: "BeyondPPA named MLCAD 2025 Best Paper Nominee",
     description:
       "Our work on human-inspired reinforcement learning for reliability-aware macro placement was selected as a Best Paper Nominee at MLCAD 2025, Santa Cruz, CA (Sep 8–10, 2025)."
@@ -60,18 +60,14 @@ const newsItems = [
     description:
       "Served as an external reviewer for the IEEE International Conference on Computer Design (ICCD) 2025."
   },
-
-  // ✅ Pinned Latest News (shows in the "Latest News" card regardless of date)
   {
     sortDate: "2026-02-10",
     dateLabel: "Feb 2026",
     category: "Talk",
     title: "Invited talk at Intel AI Forum",
     description:
-      "Presented ATLAS and discussed LLM-driven threat modeling and formal security verification for SoC security to Intel's AI research community.",
-    isPinnedLatest: true
+      "Presented ATLAS and discussed LLM-driven threat modeling and formal security verification for SoC security to Intel's AI research community."
   },
-
   {
     sortDate: "2026-02-15",
     dateLabel: "Feb 2026",
@@ -87,17 +83,40 @@ const newsItems = [
     title: "InterPUF accepted at IEEE HOST 2026",
     description:
       "InterPUF — distributed chiplet/interposer authentication using physically unclonable functions and multi-party computation — accepted to IEEE HOST 2026, Washington, D.C."
+  },
+  {
+    sortDate: "2026-03-10",
+    dateLabel: "Mar 2026",
+    category: "Publication",
+    title: "RoutePUF accepted at GOMACTech 2026",
+    description:
+      "RoutePUF — a routing-based physically unclonable function for secure interposer authentication in chiplet systems — accepted to GOMACTech 2026."
+  },
+  {
+    sortDate: "2026-03-20",
+    dateLabel: "Mar 2026",
+    category: "Industry",
+    title: "Joined Intel Corporation as XPU Security Research Intern",
+    description:
+      "Accepted an offer to join Intel Corporation as an XPU Security Research Intern in Folsom, CA. Starting May 2026."
+  },
+  {
+    sortDate: "2026-04-05",
+    dateLabel: "Apr 2026",
+    category: "Publication",
+    title: "First-author paper accepted at DAC 2026",
+    description:
+      "ATLAS: AI-Assisted Threat-to-Assertion Learning for SoC Security Verification accepted as a first-author paper at DAC 2026 (63rd Design Automation Conference), Long Beach, CA."
+  },
+  {
+    sortDate: "2026-04-10",
+    dateLabel: "Apr 2026",
+    category: "Award",
+    title: "Selected as DAC Young Fellow at DAC 2026",
+    description:
+      "Selected as a DAC Young Fellow at the 63rd Design Automation Conference (DAC 2026), Long Beach, CA — chosen from 388 applicants.",
+    isPinnedLatest: true
   }
-
-  // Commented out for now per request:
-  // {
-  //   sortDate: "2026-02-23",
-  //   dateLabel: "Feb 2026",
-  //   category: "Publication",
-  //   title: "ATLAS accepted at DAC 2026",
-  //   description:
-  //     "ATLAS: AI-Assisted Threat-to-Assertion Learning for SoC Security Verification accepted to DAC 2026 (63rd Design Automation Conference), Long Beach, CA."
-  // }
 ];
 
 function sortNewsDescending(items) {
@@ -106,6 +125,12 @@ function sortNewsDescending(items) {
 
 function getPinnedLatest(items) {
   return items.find((item) => item.isPinnedLatest === true) || null;
+}
+
+function getTagClass(category) {
+  if (category === "Award") return "news-tag news-tag-award";
+  if (category === "Industry") return "news-tag news-tag-industry";
+  return "news-tag";
 }
 
 function renderLatestNews(item) {
@@ -117,7 +142,7 @@ function renderLatestNews(item) {
       <span class="latest-badge">Latest News</span>
       <h3 class="latest-title">${item.title}</h3>
       <div class="latest-meta">
-        <span class="news-tag">${item.category}</span>
+        <span class="${getTagClass(item.category)}">${item.category}</span>
         <span>${item.dateLabel}</span>
       </div>
       <p class="latest-desc">${item.description}</p>
@@ -138,7 +163,7 @@ function renderNewsList(items) {
           <span class="news-date">${item.dateLabel}</span>
         </div>
         <div class="news-meta-line">
-          <span class="news-tag">${item.category}</span>
+          <span class="${getTagClass(item.category)}">${item.category}</span>
         </div>
         <div class="news-desc">${item.description}</div>
       </li>
