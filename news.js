@@ -104,7 +104,7 @@ const newsItems = [
     sortDate: "2026-04-05",
     dateLabel: "Apr 2026",
     category: "Publication",
-    title: "First-author paper accepted at DAC 2026",
+    title: "ATLAS accepted at DAC 2026",
     description:
       "ATLAS: AI-Assisted Threat-to-Assertion Learning for SoC Security Verification accepted as a first-author paper at DAC 2026 (63rd Design Automation Conference), Long Beach, CA."
   },
@@ -114,7 +114,7 @@ const newsItems = [
     category: "Award",
     title: "Selected as DAC Young Fellow at DAC 2026",
     description:
-      "Selected as a DAC Young Fellow at the 63rd Design Automation Conference (DAC 2026), Long Beach, CA — chosen from 388 applicants.",
+      "Selected as a DAC Young Fellow at the 63rd Design Automation Conference (DAC 2026), Long Beach, CA.",
     isPinnedLatest: true
   }
 ];
