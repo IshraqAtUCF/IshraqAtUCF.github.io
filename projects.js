@@ -29,11 +29,11 @@ const projects = [
     status: "Published",
     venue: "IEEE HOST 2026",
     description:
-      "Distributed chiplet/interposer authentication using physically unclonable functions and multi-party computation. Achieves &lt;0.23% area overhead with ML attack accuracy plateauing near random chance.",
-    tags: ["SystemVerilog", "MPC", "PUF", "Chiplet Security", "Cadence Innovus"],
+      "Open-source FPGA prototype for distributed chiplet authentication via PUF and MPC on Intel Stratix 10 SX. Zero raw-PUF exposure, replay-resistant session tokens, 0.23% area overhead, and ML attack accuracy of 46.7% — below random chance.",
+    tags: ["SystemVerilog", "MPC", "PUF", "FPGA", "Chiplet Security", "AXI", "SHA-256"],
     links: {
-      paper: null,
-      github: null,
+      paper: "https://arxiv.org/abs/2601.11368",
+      github: "https://github.com/IshraqAtUCF/InterPUF",
       demo: null
     },
     featured: true
