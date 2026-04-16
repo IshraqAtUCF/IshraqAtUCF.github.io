@@ -186,6 +186,12 @@ h1 {
   border-radius: var(--radius);
   padding: 1rem 1rem;
   box-shadow: var(--shadow);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(30, 45, 90, 0.12);
 }
 
 .card h2, .card h3 {
@@ -499,6 +505,190 @@ h1 {
   color: var(--accent-link);
 }
 
+/* ── Projects page ────────────────────────────────────── */
+
+.proj-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.proj-filter-btn {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.proj-filter-btn:hover {
+  background: var(--accent-soft);
+  color: var(--accent-link);
+  border-color: #c4d0e8;
+}
+
+.proj-filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.proj-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.proj-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(30, 45, 90, 0.12);
+}
+
+.proj-card.proj-featured {
+  border-left: 3px solid var(--gold);
+}
+
+.proj-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.proj-meta-left {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.proj-venue {
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.proj-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.proj-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.proj-card-divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0.75rem 0 0.65rem;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.proj-cat {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent-link);
+}
+
+.proj-cat-software {
+  background: #edf7ee;
+  color: #2d6a3f;
+}
+
+.proj-cat-tool {
+  background: #f3f0ea;
+  color: #6b5c3e;
+}
+
+.proj-status {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.proj-status-published  { background: var(--accent-soft); color: var(--accent-link); }
+.proj-status-active     { background: var(--gold-soft); color: #8a6a1a; border: 1px solid #e8c96a; }
+.proj-status-inprogress { background: #f3f0ea; color: var(--muted); }
+.proj-status-archived   { background: #f5f5f5; color: #999; }
+
+.proj-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.proj-link {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid var(--line);
+  color: var(--accent-link);
+  background: var(--surface);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.proj-link:hover {
+  background: var(--accent-soft);
+  border-color: #c4d0e8;
+  text-decoration: none;
+}
+
+.proj-link-paper {
+  border-color: #c4d0e8;
+  background: var(--accent-soft);
+}
+
+.proj-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .grid-2 {
@@ -506,6 +696,10 @@ h1 {
   }
 
   .cards-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .proj-grid {
     grid-template-columns: 1fr;
   }
 
