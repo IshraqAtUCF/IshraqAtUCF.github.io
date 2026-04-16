@@ -582,9 +582,9 @@ h1 {
 }
 
 .proj-venue {
+  margin: 0 0 0.5rem;
   color: var(--muted);
   font-size: 0.82rem;
-  white-space: nowrap;
 }
 
 .proj-title {

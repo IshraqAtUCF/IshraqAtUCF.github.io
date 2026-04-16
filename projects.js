@@ -1,20 +1,20 @@
 // Edit this array to add or update projects.
 // category: "Research" | "Software" | "Tool"
 // status:   "Active" | "Published" | "In Progress" | "Archived"
-// venue:    optional — for Research projects only (e.g. "DAC 2026")
+// venue:    optional — for Research projects (use " · " to separate multiple venues)
 // links:    set any field to null to omit that button entirely
 // featured: true → floats card to top and adds gold left-border
 
 const projects = [
   {
-    id: "atlas",
-    title: "ATLAS",
+    id: "llm-security-verification",
+    title: "LLM-Assisted SoC Security Verification",
     category: "Research",
     status: "Published",
     venue: "DAC 2026",
     description:
-      "AI-assisted threat-to-assertion learning for SoC security verification. Automates the full pipeline from CWE/CVE/CAPEC threat modeling to formal security property generation, verified with JasperGold.",
-    tags: ["Python", "LLM", "SystemVerilog", "JasperGold", "Formal Verification"],
+      "Automates the full pipeline from hardware threat modeling to formal security property generation using large language models. Ingests CWE/CVE/CAPEC databases to produce SystemVerilog assertions verified end-to-end by JasperGold — the ATLAS framework.",
+    tags: ["Python", "LLM", "SystemVerilog", "JasperGold", "Formal Verification", "Threat Modeling"],
     links: {
       paper: null,
       github: null,
@@ -23,14 +23,14 @@ const projects = [
     featured: true
   },
   {
-    id: "interpuf",
-    title: "InterPUF",
+    id: "heterogeneous-integration-security",
+    title: "Heterogeneous Integration Security",
     category: "Research",
     status: "Published",
-    venue: "IEEE HOST 2026",
+    venue: "HOST 2026 · GOMACTech 2026 · PAINE 2025 · GLSVLSI 2025",
     description:
-      "Open-source FPGA prototype for distributed chiplet authentication via PUF and MPC on Intel Stratix 10 SX. Zero raw-PUF exposure, replay-resistant session tokens, 0.23% area overhead, and ML attack accuracy of 46.7% — below random chance.",
-    tags: ["SystemVerilog", "MPC", "PUF", "FPGA", "Chiplet Security", "AXI", "SHA-256"],
+      "A family of hardware security protocols for authenticating chiplets, interposers, and System-in-Package assemblies. Combines PUF-based physical authentication (InterPUF, RoutePUF) with MPC-based distributed trust (AuthenTree, SAFE-SiP) — zero raw-PUF exposure, &lt;0.23% area overhead, ML attack accuracy at 46.7%.",
+    tags: ["SystemVerilog", "PUF", "MPC", "FPGA", "Chiplet Security", "AXI", "SHA-256"],
     links: {
       paper: "https://arxiv.org/abs/2601.11368",
       github: "https://github.com/IshraqAtUCF/InterPUF",
@@ -39,13 +39,13 @@ const projects = [
     featured: true
   },
   {
-    id: "beyondppa",
-    title: "BeyondPPA",
+    id: "ml-macro-placement",
+    title: "ML-Driven Reliability-Aware Macro Placement",
     category: "Research",
     status: "Published",
     venue: "MLCAD 2025",
     description:
-      "Human-inspired reinforcement learning for post-route, reliability-aware macro placement in heterogeneous SoCs. Named Best Paper Nominee at MLCAD 2025.",
+      "Human-inspired reinforcement learning for post-route, reliability-aware macro placement in heterogeneous SoCs. Jointly optimizes timing, power, and wirelength while minimizing stress-induced reliability risks — the BeyondPPA framework. Best Paper Nominee at MLCAD 2025.",
     tags: ["Python", "Reinforcement Learning", "EDA", "Cadence Innovus", "Macro Placement"],
     links: {
       paper: null,
@@ -55,62 +55,14 @@ const projects = [
     featured: true
   },
   {
-    id: "routepuf",
-    title: "RoutePUF",
-    category: "Research",
-    status: "Published",
-    venue: "GOMACTech 2026",
-    description:
-      "Routing-based physically unclonable function for secure interposer authentication in advanced chiplet systems.",
-    tags: ["SystemVerilog", "PUF", "Chiplet Authentication", "Interposer Security"],
-    links: {
-      paper: null,
-      github: null,
-      demo: null
-    },
-    featured: false
-  },
-  {
-    id: "authentree",
-    title: "AuthenTree",
-    category: "Research",
-    status: "Published",
-    venue: "IEEE PAINE 2025",
-    description:
-      "Scalable MPC-based distributed trust architecture for chiplet-based heterogeneous integration systems.",
-    tags: ["MPC", "Chiplet Security", "Distributed Trust", "Protocol Design"],
-    links: {
-      paper: null,
-      github: null,
-      demo: null
-    },
-    featured: false
-  },
-  {
-    id: "ecologic",
-    title: "ECOLogic",
+    id: "efpga-adaptive-logic",
+    title: "Post-Fabrication Adaptive Logic via eFPGA",
     category: "Research",
     status: "Published",
     venue: "ICCD 2025",
     description:
-      "Enabling circular, obfuscated, and adaptive logic in SoC designs via eFPGA augmentation, improving post-fabrication reconfigurability and security.",
-    tags: ["SystemVerilog", "eFPGA", "Logic Obfuscation", "SoC Security"],
-    links: {
-      paper: null,
-      github: null,
-      demo: null
-    },
-    featured: false
-  },
-  {
-    id: "safe-sip",
-    title: "SAFE-SiP",
-    category: "Research",
-    status: "Published",
-    venue: "GLSVLSI 2025",
-    description:
-      "Secure authentication framework for System-in-Package using multi-party computation, establishing trust across heterogeneous chiplet assemblies.",
-    tags: ["MPC", "SiP Security", "Authentication", "Chiplet Integration"],
+      "Enables circular, obfuscated, and adaptive logic in SoC designs through embedded FPGA augmentation, providing post-fabrication reconfigurability and hardware security hardening — the ECOLogic framework.",
+    tags: ["SystemVerilog", "eFPGA", "Logic Obfuscation", "SoC Security", "Post-Fabrication"],
     links: {
       paper: null,
       github: null,
@@ -152,7 +104,7 @@ function buildTagPills(tags) {
 
 function renderCard(proj) {
   const venueHtml = proj.venue
-    ? `<span class="proj-venue">${proj.venue}</span>`
+    ? `<p class="proj-venue">${proj.venue}</p>`
     : "";
 
   const linkButtons = buildLinkButtons(proj.links);
@@ -169,9 +121,9 @@ function renderCard(proj) {
           <span class="${getCatClass(proj.category)}">${proj.category}</span>
           <span class="${getStatusClass(proj.status)}">${proj.status}</span>
         </div>
-        ${venueHtml}
       </div>
       <h3 class="proj-title">${proj.title}</h3>
+      ${venueHtml}
       <p class="proj-desc">${proj.description}</p>
       <hr class="proj-card-divider" />
       <div class="proj-tags">${buildTagPills(proj.tags)}</div>
