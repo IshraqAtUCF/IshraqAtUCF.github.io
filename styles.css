@@ -699,8 +699,11 @@ h1 {
   gap: 0.75rem;
 }
 
-/* Wide class assigned dynamically by computeLayout() in travel.js */
-.travel-photo--wide {
+/* Alternating zigzag: photos 1, 4, 7, 10… span 2 cols
+   Row A: [wide ──────────][small]
+   Row B: [small][wide ──────────]
+   Rows always sum to 3 cols; pattern continues cleanly as photos are added */
+.travel-photo:nth-child(3n+1) {
   grid-column: span 2;
   aspect-ratio: 3 / 2;
 }
@@ -840,8 +843,8 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  /* On 1-col, wide class has no effect — reset span + ratio */
-  .travel-photo--wide {
+  /* On 1-col, nth-child span 2 becomes meaningless — reset it */
+  .travel-photo:nth-child(3n+1) {
     grid-column: span 1;
     aspect-ratio: 4 / 3;
   }
