@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Ishraq Tashdid</title>
-  <meta name="description" content="Research systems, formal verification tools, and open-source implementations by Ishraq Tashdid — spanning hardware security, chiplet authentication, and EDA automation." />
+  <title>Travel | Ishraq Tashdid</title>
+  <meta name="description" content="Photographs from national parks, state travels, and conference trips by Ishraq Tashdid." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -14,7 +14,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
-        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="projects.html">Projects</a>
         <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
@@ -24,25 +24,31 @@
   <main>
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">Research &amp; Software</p>
-        <h1>Projects</h1>
+        <p class="eyebrow">Beyond the Lab</p>
+        <h1>Travel</h1>
         <p class="hero-sub">
-          Published research systems, verification tools, and open-source implementations
-          spanning hardware security, chiplet authentication, and EDA automation.
+          National parks, state wanders, and conference cities — photographs of the world around.
         </p>
       </div>
     </section>
 
     <section class="section section-tight">
       <div class="container">
-        <!-- Filter bar — rendered by projects.js -->
-        <div id="proj-filters" class="proj-filter-bar" role="group" aria-label="Filter projects by category"></div>
+        <!-- Filter bar — rendered by travel.js -->
+        <div id="travel-filters" class="proj-filter-bar" role="group" aria-label="Filter by category"></div>
 
-        <!-- Project grid — rendered by projects.js -->
-        <div id="proj-grid" class="proj-grid" aria-live="polite"></div>
+        <!-- Photo grid — rendered by travel.js -->
+        <div id="travel-grid" class="travel-grid" aria-live="polite"></div>
       </div>
     </section>
   </main>
+
+  <!-- Lightbox — static shell, controlled by travel.js -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-wrap">
@@ -60,7 +66,7 @@
     </div>
   </footer>
 
-  <script src="projects.js"></script>
+  <script src="travel.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

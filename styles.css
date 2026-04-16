@@ -689,6 +689,121 @@ h1 {
   font-size: 0.95rem;
 }
 
+/* ── Travel page ─────────────────────────────────────── */
+
+/* Filter bar reuses .proj-filter-bar / .proj-filter-btn — no new rules needed */
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+/* Wide class assigned dynamically by computeLayout() in travel.js */
+.travel-photo--wide {
+  grid-column: span 2;
+  aspect-ratio: 3 / 2;
+}
+
+.travel-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: var(--line);
+}
+
+.travel-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.travel-photo:hover img {
+  transform: scale(1.03);
+}
+
+.travel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.55rem 0.75rem 0.5rem;
+  background: linear-gradient(transparent, rgba(10, 12, 24, 0.62));
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.travel-photo:hover .travel-caption {
+  opacity: 1;
+}
+
+.travel-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(8, 10, 20, 0.93);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  padding: 0.25rem 0.5rem;
+}
+
+.lightbox-close:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .grid-2 {
@@ -703,6 +818,11 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .travel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* wide photos still span 2 on 2-col grid — fills the row cleanly */
+
   .nav-wrap {
     align-items: flex-start;
     padding-top: 0.5rem;
@@ -712,5 +832,17 @@ h1 {
 
   .hero {
     padding-top: 2.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .travel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* On 1-col, wide class has no effect — reset span + ratio */
+  .travel-photo--wide {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
   }
 }
