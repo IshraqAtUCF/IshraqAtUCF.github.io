@@ -699,10 +699,8 @@ h1 {
   gap: 0.75rem;
 }
 
-/* Tatami-inspired rhythm: groups of 5 alternate [wide+small] / [small×3]
-   Every 5th+1 photo (1st, 6th, 11th…) spans 2 cols — creates visual cadence
-   without randomness */
-.travel-photo:nth-child(5n+1) {
+/* Wide class assigned dynamically by computeLayout() in travel.js */
+.travel-photo--wide {
   grid-column: span 2;
   aspect-ratio: 3 / 2;
 }
@@ -842,7 +840,8 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .travel-photo:nth-child(5n+1) {
+  /* On 1-col, wide class has no effect — reset span + ratio */
+  .travel-photo--wide {
     grid-column: span 1;
     aspect-ratio: 4 / 3;
   }
