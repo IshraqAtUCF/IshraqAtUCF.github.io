@@ -32,7 +32,12 @@ const projects = [
       "A family of hardware security protocols for authenticating chiplets, interposers, and System-in-Package assemblies. Combines PUF-based physical authentication (InterPUF, RoutePUF) with MPC-based distributed trust (AuthenTree, SAFE-SiP) — zero raw-PUF exposure, &lt;0.23% area overhead, ML attack accuracy at 46.7%.",
     tags: ["SystemVerilog", "PUF", "MPC", "FPGA", "Chiplet Security", "AXI", "SHA-256"],
     links: {
-      paper: "https://arxiv.org/abs/2601.11368",
+      papers: [
+        { label: "InterPUF", url: "https://arxiv.org/abs/2601.11368" },
+        // { label: "RoutePUF",   url: null },
+        // { label: "AuthenTree", url: null },
+        // { label: "SAFE-SiP",   url: null },
+      ],
       github: "https://github.com/IshraqAtUCF/InterPUF",
       demo: null
     },
@@ -92,7 +97,13 @@ function getStatusClass(status) {
 
 function buildLinkButtons(links) {
   const btns = [];
-  if (links.paper)  btns.push(`<a class="proj-link proj-link-paper" href="${links.paper}" target="_blank" rel="noopener noreferrer">Paper ↗</a>`);
+  if (links.papers) {
+    links.papers.forEach(p => {
+      if (p.url) btns.push(`<a class="proj-link proj-link-paper" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.label} ↗</a>`);
+    });
+  } else if (links.paper) {
+    btns.push(`<a class="proj-link proj-link-paper" href="${links.paper}" target="_blank" rel="noopener noreferrer">Paper ↗</a>`);
+  }
   if (links.github) btns.push(`<a class="proj-link" href="${links.github}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`);
   if (links.demo)   btns.push(`<a class="proj-link" href="${links.demo}" target="_blank" rel="noopener noreferrer">Demo ↗</a>`);
   return btns.join("");
