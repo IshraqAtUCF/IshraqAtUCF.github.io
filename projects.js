@@ -16,7 +16,7 @@ const projects = [
       "Automates the full pipeline from hardware threat modeling to formal security property generation using large language models. Ingests CWE/CVE/CAPEC databases to produce SystemVerilog assertions verified end-to-end by JasperGold — the ATLAS framework.",
     tags: ["Python", "LLM", "SystemVerilog", "JasperGold", "Formal Verification", "Threat Modeling"],
     links: {
-      paper: null,
+      paper: "https://arxiv.org/abs/2603.01170",
       github: null,
       demo: null
     },
@@ -32,7 +32,12 @@ const projects = [
       "A family of hardware security protocols for authenticating chiplets, interposers, and System-in-Package assemblies. Combines PUF-based physical authentication (InterPUF, RoutePUF) with MPC-based distributed trust (AuthenTree, SAFE-SiP) — zero raw-PUF exposure, &lt;0.23% area overhead, ML attack accuracy at 46.7%.",
     tags: ["SystemVerilog", "PUF", "MPC", "FPGA", "Chiplet Security", "AXI", "SHA-256"],
     links: {
-      paper: "https://arxiv.org/abs/2601.11368",
+      papers: [
+        { label: "InterPUF",   url: "https://arxiv.org/abs/2601.11368" },
+        { label: "AuthenTree", url: "https://arxiv.org/abs/2508.13033" },
+        { label: "SAFE-SiP",   url: "https://arxiv.org/abs/2505.09002" },
+        // { label: "RoutePUF", url: null }, // no link yet
+      ],
       github: "https://github.com/IshraqAtUCF/InterPUF",
       demo: null
     },
@@ -48,7 +53,7 @@ const projects = [
       "Human-inspired reinforcement learning for post-route, reliability-aware macro placement in heterogeneous SoCs. Jointly optimizes timing, power, and wirelength while minimizing stress-induced reliability risks — the BeyondPPA framework. Best Paper Nominee at MLCAD 2025.",
     tags: ["Python", "Reinforcement Learning", "EDA", "Cadence Innovus", "Macro Placement"],
     links: {
-      paper: null,
+      paper: "https://dl.acm.org/doi/abs/10.1109/MLCAD65511.2025.11189164",
       github: null,
       demo: null
     },
@@ -64,7 +69,7 @@ const projects = [
       "Enables circular, obfuscated, and adaptive logic in SoC designs through embedded FPGA augmentation, providing post-fabrication reconfigurability and hardware security hardening — the ECOLogic framework.",
     tags: ["SystemVerilog", "eFPGA", "Logic Obfuscation", "SoC Security", "Post-Fabrication"],
     links: {
-      paper: null,
+      paper: "https://arxiv.org/abs/2508.04516",
       github: null,
       demo: null
     },
@@ -92,7 +97,13 @@ function getStatusClass(status) {
 
 function buildLinkButtons(links) {
   const btns = [];
-  if (links.paper)  btns.push(`<a class="proj-link proj-link-paper" href="${links.paper}" target="_blank" rel="noopener noreferrer">Paper ↗</a>`);
+  if (links.papers) {
+    links.papers.forEach(p => {
+      if (p.url) btns.push(`<a class="proj-link proj-link-paper" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.label} ↗</a>`);
+    });
+  } else if (links.paper) {
+    btns.push(`<a class="proj-link proj-link-paper" href="${links.paper}" target="_blank" rel="noopener noreferrer">Paper ↗</a>`);
+  }
   if (links.github) btns.push(`<a class="proj-link" href="${links.github}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>`);
   if (links.demo)   btns.push(`<a class="proj-link" href="${links.demo}" target="_blank" rel="noopener noreferrer">Demo ↗</a>`);
   return btns.join("");
