@@ -114,7 +114,23 @@ const newsItems = [
     category: "Award",
     title: "Selected as DAC Young Fellow at DAC 2026",
     description:
-      "Selected as a DAC Young Fellow at the 63rd Design Automation Conference (DAC 2026), Long Beach, CA.",
+      "Selected as a DAC Young Fellow at the 63rd Design Automation Conference (DAC 2026), Long Beach, CA."
+  },
+  {
+    sortDate: "2026-05-07",
+    dateLabel: "May 2026",
+    category: "Award",
+    title: "UCF ECE Outstanding Student Researcher Award",
+    description:
+      "Received the UCF ECE Outstanding Student Researcher Award on May 7, 2026, in recognition of outstanding contributions to research during FY 2025–26."
+  },
+  {
+    sortDate: "2026-05-18",
+    dateLabel: "May 2026",
+    category: "Industry",
+    title: "Started as XPU Security Research Intern at Intel",
+    description:
+      "Began as an XPU Security Research Intern at Intel Corporation in Folsom, CA on May 18, 2026. Spending the summer working on cutting-edge processor security research.",
     isPinnedLatest: true
   }
 ];
