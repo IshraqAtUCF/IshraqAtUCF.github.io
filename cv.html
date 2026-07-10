@@ -63,8 +63,9 @@
                 <strong>University of Central Florida (UCF)</strong>
                 <div class="small-note">
                   Ph.D. in Computer Engineering (Joint PhD/MS), Jan 2024–Present<br />
+                  Advisor: Dr. Sazadur Rahman, Dept. of Electrical &amp; Computer Engineering<br />
                   <a href="https://www.ece.ucf.edu/doctoral-student-earns-ucf-trustee-fellowship/" target="_blank" rel="noopener noreferrer">Trustee's Doctoral Fellow</a>
-                  • CGPA: 4.00/4.00
+                  • GPA: 3.96/4.00
                 </div>
               </li>
               <li>
@@ -95,15 +96,21 @@
               <p class="cv-skill-label">EDA &amp; Simulation</p>
               <p class="cv-skill-desc">Cadence Innovus / Genus / JasperGold, ModelSim, Quartus Prime, Yosys, PyVerilog</p>
             </div>
+            <div class="cv-skill-group">
+              <p class="cv-skill-label">ML / AI</p>
+              <p class="cv-skill-desc">PyTorch, reinforcement learning (PPO/DDPG), LLM prompting &amp; fine-tuning, RAG pipelines</p>
+            </div>
           </div>
 
           <div class="card">
             <h3>Honors &amp; Awards</h3>
             <ul class="clean-list cv-honors-list">
               <li><strong>UCF Trustee Doctoral Fellowship</strong> (4-year funding), 2024–2028</li>
+              <li><strong>UCF ECE Outstanding Student Researcher Award</strong>, May 2026</li>
+              <li><strong>DAC Young Fellow</strong>, DAC 2026</li>
+              <li><strong>Future Faculty Laureate (FFL)</strong>, UCF ECE Department, Fall 2024–Present</li>
               <li><strong>Best Paper Award Nominee</strong>, MLCAD 2025 <span class="award-badge">Best Paper Nominee</span></li>
               <li><strong>NSF Travel Grant</strong>, IEEE HOST 2025</li>
-              <li><strong>External Reviewer</strong>, IEEE ICCD 2025</li>
             </ul>
           </div>
         </aside>
@@ -128,17 +135,14 @@
                   <span class="small-note"> (Jan 2024–Present)</span>
                 </p>
                 <ul class="clean-list cv-timeline-list">
-                  <!-- ATLAS / DAC intentionally hidden for now -->
-                  <!--
                   <li>
-                    <strong>LLM-driven threat modeling & automated vulnerability reasoning:</strong>
+                    <strong>LLM-driven threat modeling &amp; automated vulnerability reasoning (DAC 2026):</strong>
                     Built <em>ATLAS</em>, a framework that ingests CWE/CVE/CAPEC vulnerability databases,
                     auto-generates structured threat models for any SoC asset, and translates them into formal
                     security properties verified by JasperGold. Detected 39/48 known CWEs across three HACK@DAC
-                    benchmarks (>82% correct property generation). Directly applicable to firmware and software
+                    benchmarks (&gt;82% correct property generation). Directly applicable to firmware and software
                     vulnerability workflows that reason over the same threat taxonomies.
                   </li>
-                  -->
                   <li>
                     <strong>Automated security property generation &amp; cross-abstraction analysis:</strong>
                     Developed pipelines combining static analysis, AST-level structural reasoning, execution traces,
@@ -154,9 +158,22 @@
                     &lt;0.072% power overhead; ML modeling attacks converged at ~47% accuracy (random-guess level).
                   </li>
                   <li>
+                    <strong>Adaptive logic obfuscation for SoC IP protection (ICCD 2025):</strong>
+                    Developed <em>ECOLogic</em>, a framework enabling circular, obfuscated, and adaptive logic via
+                    eFPGA-augmented SoCs. The approach allows post-fabrication logic reconfiguration to resist reverse
+                    engineering and hardware Trojan insertion while maintaining functional correctness and low overhead.
+                  </li>
+                  <li>
                     <strong>Macro placement automation (MLCAD 2025 — Best Paper Nominee):</strong>
                     Designed human-inspired reinforcement learning frameworks for chip floorplanning to improve post-route
                     routability and reliability in heterogeneous SoCs.
+                  </li>
+                  <li>
+                    <strong>Scalable chiplet trust architectures:</strong>
+                    Developed <em>SAFE-SiP</em> (GLSVLSI 2025) and <em>AuthenTree</em> (PAINE 2025), two complementary
+                    MPC-based distributed trust frameworks addressing authentication scalability in chiplet-based
+                    heterogeneous integration. AuthenTree achieves logarithmic communication complexity in the number of
+                    chiplets, enabling practical deployment in large-scale SiP designs.
                   </li>
                 </ul>
               </div>
@@ -166,6 +183,18 @@
           <section class="cv-section">
             <h2 class="cv-section-title">Industry Experience</h2>
             <div class="cv-timeline">
+              <div class="cv-timeline-entry">
+                <p class="small-note">
+                  <strong>XPU Security Research Intern</strong> — Intel Corporation, Folsom, CA
+                  <span class="small-note"> (May 2026–Present)</span>
+                </p>
+                <ul class="clean-list cv-timeline-list">
+                  <li>
+                    Conducting security research on next-generation XPU (accelerator) architectures with Intel's AI and
+                    hardware security research team.
+                  </li>
+                </ul>
+              </div>
               <div class="cv-timeline-entry">
                 <p class="small-note">
                   <strong>Hardware Verification Engineer</strong> — <a href="https://xcelerium.com/" target="_blank" rel="noopener noreferrer">XCelerium</a>, Irvine, CA
@@ -194,14 +223,20 @@
           <section class="cv-section">
             <h2 class="cv-section-title">Selected Publications</h2>
             <ul class="pub-list cv-pub-list">
-              <!-- DAC intentionally hidden for now -->
-              <!--
-              <li>
-                <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
-                <em>“ATLAS: AI-Assisted Threat-to-Assertion Learning for System-on-Chip Security Verification,”</em>
-                <strong>DAC 2026</strong>, Long Beach, CA, USA. <em>Accepted.</em>
+              <li class="pub-entry">
+                <p class="pub-citation">
+                  <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
+                  <em>“ATLAS: AI-Assisted Threat-to-Assertion Learning for System-on-Chip Security Verification,”</em>
+                </p>
+                <p class="pub-desc"><span class="pub-venue">DAC 2026</span> Long Beach, CA, USA. Accepted.</p>
               </li>
-              -->
+              <li class="pub-entry">
+                <p class="pub-citation">
+                  <strong>Ishraq Tashdid</strong>,
+                  <em>“RoutePUF: A Routing-Based Physically Unclonable Function for Secure Interposer Authentication in Chiplet Systems,”</em>
+                </p>
+                <p class="pub-desc"><span class="pub-venue">GOMACTech 2026</span> Accepted.</p>
+              </li>
               <li class="pub-entry">
                 <p class="pub-citation">
                   <strong>Ishraq Tashdid</strong>, Tasnuva Farheen, Sazadur Rahman,
@@ -272,6 +307,14 @@
               <p class="small-note">Feb 2026</p>
               <p>Invited presentation at the 4th Annual Florida Semiconductor Summit, Rosen Shingle Creek, Orlando, FL. Theme: <em>Semiconductor Manufacturing in Florida: Power. Progress. Possibilities.</em></p>
             </div>
+          </section>
+
+          <section class="cv-section">
+            <h2 class="cv-section-title">Professional Service</h2>
+            <ul class="clean-list">
+              <li><strong>External Reviewer</strong>, IEEE International Conference on Computer Design (ICCD 2025)</li>
+              <li><strong>External Reviewer</strong>, IEEE International Symposium on Hardware Oriented Security and Trust (HOST 2026)</li>
+            </ul>
           </section>
 
         </div>
