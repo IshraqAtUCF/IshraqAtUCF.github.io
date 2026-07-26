@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found | Ishraq Tashdid</title>
+  <meta name="description" content="That page could not be found on ishraqtashdid.com." />
+  <meta name="robots" content="noindex" />
+
+  <meta name="theme-color" content="#1e2d5a" />
+  <link rel="icon" href="favicon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">Ishraq Tashdid</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="projects.html">Projects</a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=gYcWmKYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">404</p>
+        <h1>Page not found</h1>
+        <p class="hero-sub">
+          That link doesn't point anywhere on this site. URLs here are
+          case-sensitive, so <code>/Hello</code> and <code>/hello</code> are not the
+          same page &mdash; a typo is the most likely cause.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Try one of these</h2>
+          <ul class="clean-list">
+            <li><a href="index.html">Home</a> &mdash; research, highlights, and news</li>
+            <li><a href="cv.html">CV</a> &mdash; full curriculum vitae and PDF download</li>
+            <li><a href="projects.html">Projects</a> &mdash; papers and code</li>
+            <li><a href="hello.html">Contact card</a> &mdash; CV download and contact details</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>&copy; <span id="year"></span> Ishraq Tashdid</p>
+      <p class="footer-links">
+        <a href="cv.html">CV</a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=gYcWmKYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

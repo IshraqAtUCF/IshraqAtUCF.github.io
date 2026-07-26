@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to /hello | Ishraq Tashdid</title>
+
+  <!-- /connect is a spoken-aloud alias for /hello. GitHub Pages has no
+       server-side redirects (_redirects is Netlify, .htaccess is Apache), so
+       this is a client-side stub with three independent fallbacks: meta
+       refresh, a JS replace, and a visible link for anything that honours
+       neither. The QR code encodes /hello directly, so this path is only ever
+       reached by someone typing the alias. -->
+  <meta http-equiv="refresh" content="0; url=/hello" />
+  <link rel="canonical" href="https://ishraqtashdid.com/hello" />
+  <meta name="robots" content="noindex" />
+
+  <meta name="theme-color" content="#1e2d5a" />
+  <link rel="icon" href="favicon.png" sizes="32x32" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- replace() rather than assign() so the redirect doesn't trap the back button. -->
+  <script>window.location.replace("/hello");</script>
+</head>
+<body class="share-page">
+  <main class="share-wrap share-redirect">
+    <p>Taking you to <a href="/hello">ishraqtashdid.com/hello</a>&hellip;</p>
+  </main>
+</body>
+</html>

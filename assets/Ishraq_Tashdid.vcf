@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Tashdid;Ishraq;;;
+FN:Ishraq Tashdid
+TITLE:Ph.D. Student, Computer Engineering
+ORG:University of Central Florida
+EMAIL;type=INTERNET;type=WORK;type=pref:ishraq.tashdid@ucf.edu
+EMAIL;type=INTERNET;type=HOME:tashdid.ishraq@gmail.com
+TEL;type=CELL:+16892867719
+ADR;type=WORK:;;;Orlando;FL;32817;USA
+URL:https://ishraqtashdid.com
+X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/ishraqtashdid
+X-SOCIALPROFILE;type=github:https://github.com/IshraqAtUCF
+NOTE:SoC security\, formal verification\, and LLM-assisted threat modeling. UCF Trustees Doctoral Fellow. ATLAS @ DAC 2026\; DAC Young Fellow.
+END:VCARD

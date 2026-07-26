@@ -1042,3 +1042,243 @@ h1 {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* ==========================================================================
+   QR landing card (hello.html / connect.html)
+
+   Scoped entirely under .share-page so nothing here can affect the other
+   pages. Reuses the :root tokens above — no new colors are introduced.
+   Sized for a phone held one-handed: the name, pitch, hook, and both CTAs
+   are meant to land above the fold on a 390x844 viewport.
+   ========================================================================== */
+body.share-page {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.share-wrap {
+  width: min(30rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 2.75rem 0 2.5rem;
+}
+
+/* Header block ----------------------------------------------------------- */
+.share-eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.share-name {
+  margin: 0.5rem 0 0;
+  /* Overrides the global h1 color, which is navy-on-cream. */
+  color: #ffffff;
+  font-size: clamp(2.1rem, 9vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.share-pitch {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 1rem;
+}
+
+/* Conference hook -------------------------------------------------------- */
+.share-hook {
+  margin: 1.25rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.94rem;
+}
+
+.share-hook-badge {
+  /* Own line rather than inline: inline leaves the tail of the sentence
+     orphaned under the badge on narrow screens. */
+  display: block;
+  width: fit-content;
+  margin-bottom: 0.45rem;
+  padding: 0.15rem 0.55rem;
+  background: var(--gold);
+  border-radius: 999px;
+  color: #2a2110;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Primary / secondary actions -------------------------------------------- */
+.share-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  /* 52px floor: these get tapped one-handed while standing. */
+  min-height: 52px;
+  padding: 0.8rem 1.1rem;
+  border-radius: 12px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share-btn:hover {
+  text-decoration: none;
+}
+
+.share-btn-primary {
+  background: var(--gold);
+  color: #2a2110;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.share-btn-primary:hover {
+  opacity: 0.92;
+}
+
+.share-btn-note {
+  font-size: 0.76rem;
+  font-weight: 600;
+  opacity: 0.72;
+}
+
+.share-btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  color: #ffffff;
+}
+
+.share-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Secondary link grid ---------------------------------------------------- */
+.share-links {
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.share-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.6rem 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.share-links a:hover {
+  background: rgba(255, 255, 255, 0.13);
+  text-decoration: none;
+}
+
+.share-full-site {
+  margin: 1.35rem 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.share-full-site a {
+  color: rgba(255, 255, 255, 0.62);
+  min-height: 44px;
+  display: inline-block;
+  padding: 0.6rem 0.5rem;
+}
+
+.share-full-site a:hover {
+  color: #ffffff;
+}
+
+/* Keyboard focus needs to be visible against navy. */
+.share-page a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Below-the-fold QR block ------------------------------------------------ */
+.share-qr {
+  margin-top: 2.5rem;
+  padding: 1.4rem 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.share-qr h2 {
+  margin: 0 0 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.share-qr img {
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
+  /* The quiet zone must stay white for reliable scanning. */
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.share-qr-url {
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+}
+
+/* Redirect stub fallback (connect.html, no-JS) ---------------------------- */
+.share-redirect {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.share-redirect a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@media (max-width: 540px) {
+  .share-wrap {
+    padding-top: 2rem;
+  }
+}
+
+/* Two columns fit "Google Scholar" comfortably down to ~360px; only stack
+   below that, since stacking costs a lot of vertical space and pushes the
+   secondary links off the first screen. */
+@media (max-width: 359px) {
+  .share-links {
+    grid-template-columns: 1fr;
+  }
+}
