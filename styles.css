@@ -1061,13 +1061,48 @@ body.share-page {
 .share-wrap {
   width: min(30rem, calc(100% - 2.5rem));
   margin: 0 auto;
-  padding: 2rem 0 2.5rem;
+  /* Top padding is tuned so both CTAs clear the fold on a 360x640 Android,
+     the smallest viewport worth designing for here. */
+  padding: 1.5rem 0 2.5rem;
+}
+
+/* Gradient hero card ------------------------------------------------------
+   The identity block sits on a navy-to-indigo gradient card; the actions
+   below it stay on the cream page. Both gradient stops are existing tokens
+   (--accent -> --accent-link), extended with one lighter tint of the same
+   hue so the ramp doesn't band. */
+.share-hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.55rem 1.4rem 1.45rem;
+  border-radius: 26px;
+  background: linear-gradient(135deg,
+              var(--accent) 0%,
+              var(--accent-link) 58%,
+              #3d61b0 100%);
+  box-shadow: 0 18px 40px rgba(30, 45, 90, 0.28);
+  color: #ffffff;
+}
+
+/* Faint circuit-trace watermark — an inline SVG data URI, so it costs no
+   network request. Purely decorative, hence aria-hidden by construction. */
+.share-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.10' stroke-width='1.1'%3E%3Cpath d='M0 14h16v14h24v14h16'/%3E%3Cpath d='M14 0v12M40 0v20h16'/%3E%3Cpath d='M0 42h12v14'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.13'%3E%3Ccircle cx='16' cy='14' r='2.2'/%3E%3Ccircle cx='40' cy='28' r='2.2'/%3E%3Ccircle cx='12' cy='42' r='2.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Keep the text above the watermark. */
+.share-hero-card > * {
+  position: relative;
 }
 
 /* Header block ----------------------------------------------------------- */
 .share-eyebrow {
   margin: 0;
-  color: var(--accent-link);
+  color: var(--gold);
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -1076,29 +1111,30 @@ body.share-page {
 }
 
 .share-name {
-  /* Colour comes from the global h1 rule (navy), same as every other page. */
-  margin: 0.5rem 0 0;
+  /* Overrides the global navy h1: this one sits on the gradient card. */
+  margin: 0.45rem 0 0;
+  color: #ffffff;
   font-size: clamp(2.1rem, 9vw, 2.75rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
 .share-pitch {
-  margin: 0.85rem 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
+  margin: 0.8rem 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.02rem;
 }
 
 /* Conference hook -------------------------------------------------------- */
-/* Same gold-on-cream palette as .award-badge, which is how the site already
-   marks a highlight. */
+/* Frosted panel inside the gradient card, with the same gold the site
+   already uses to mark a highlight (.award-badge). */
 .share-hook {
-  margin: 1.25rem 0 0;
-  padding: 0.75rem 0.9rem;
-  background: var(--gold-soft);
-  border: 1px solid #e8c96a;
+  margin: 1.1rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-sm);
-  color: #6f5615;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.94rem;
 }
 
@@ -1119,7 +1155,7 @@ body.share-page {
 
 /* Primary / secondary actions -------------------------------------------- */
 .share-actions {
-  margin-top: 1.5rem;
+  margin-top: 1.1rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
