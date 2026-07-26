@@ -1059,7 +1059,9 @@ body.share-page {
 }
 
 .share-wrap {
-  width: min(30rem, calc(100% - 2.5rem));
+  /* Wider than a typical text column, and narrow gutters on phones, so the
+     hero reads as a broad landscape card rather than a tall block. */
+  width: min(36rem, calc(100% - 1.75rem));
   margin: 0 auto;
   /* Top padding is tuned so both CTAs clear the fold on a 360x640 Android,
      the smallest viewport worth designing for here. */
@@ -1074,8 +1076,8 @@ body.share-page {
 .share-hero-card {
   position: relative;
   overflow: hidden;
-  padding: 1.55rem 1.4rem 1.45rem;
-  border-radius: 26px;
+  padding: 1.4rem 1.5rem 1.35rem;
+  border-radius: 22px;
   background: linear-gradient(135deg,
               var(--accent) 0%,
               var(--accent-link) 58%,
@@ -1084,35 +1086,20 @@ body.share-page {
   color: #ffffff;
 }
 
-/* Faint circuit-trace watermark — an inline SVG data URI, so it costs no
-   network request. Purely decorative, hence aria-hidden by construction. */
-.share-hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.10' stroke-width='1.1'%3E%3Cpath d='M0 14h16v14h24v14h16'/%3E%3Cpath d='M14 0v12M40 0v20h16'/%3E%3Cpath d='M0 42h12v14'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.13'%3E%3Ccircle cx='16' cy='14' r='2.2'/%3E%3Ccircle cx='40' cy='28' r='2.2'/%3E%3Ccircle cx='12' cy='42' r='2.2'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* Keep the text above the watermark. */
-.share-hero-card > * {
-  position: relative;
-}
-
 /* Header block ----------------------------------------------------------- */
 .share-eyebrow {
   margin: 0;
   color: var(--gold);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .share-name {
   /* Overrides the global navy h1: this one sits on the gradient card. */
-  margin: 0.45rem 0 0;
+  margin: 0.3rem 0 0;
   color: #ffffff;
   font-size: clamp(2.1rem, 9vw, 2.75rem);
   line-height: 1.05;
@@ -1120,17 +1107,18 @@ body.share-page {
 }
 
 .share-pitch {
-  margin: 0.8rem 0 0;
+  margin: 0.65rem 0 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.02rem;
+  font-size: 0.98rem;
+  line-height: 1.42;
 }
 
 /* Conference hook -------------------------------------------------------- */
 /* Frosted panel inside the gradient card, with the same gold the site
    already uses to mark a highlight (.award-badge). */
 .share-hook {
-  margin: 1.1rem 0 0;
-  padding: 0.7rem 0.9rem;
+  margin: 0.95rem 0 0;
+  padding: 0.6rem 0.85rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-sm);
