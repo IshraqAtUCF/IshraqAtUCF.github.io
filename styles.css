@@ -1051,21 +1051,23 @@ h1 {
    Sized for a phone held one-handed: the name, pitch, hook, and both CTAs
    are meant to land above the fold on a 390x844 viewport.
    ========================================================================== */
+/* Sits on the site's cream background like every other page. Navy stays
+   where it is everywhere else: the header band. */
 body.share-page {
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .share-wrap {
   width: min(30rem, calc(100% - 2.5rem));
   margin: 0 auto;
-  padding: 2.75rem 0 2.5rem;
+  padding: 2rem 0 2.5rem;
 }
 
 /* Header block ----------------------------------------------------------- */
 .share-eyebrow {
   margin: 0;
-  color: var(--gold);
+  color: var(--accent-link);
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -1074,9 +1076,8 @@ body.share-page {
 }
 
 .share-name {
+  /* Colour comes from the global h1 rule (navy), same as every other page. */
   margin: 0.5rem 0 0;
-  /* Overrides the global h1 color, which is navy-on-cream. */
-  color: #ffffff;
   font-size: clamp(2.1rem, 9vw, 2.75rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -1084,18 +1085,20 @@ body.share-page {
 
 .share-pitch {
   margin: 0.85rem 0 0;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 1rem;
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 /* Conference hook -------------------------------------------------------- */
+/* Same gold-on-cream palette as .award-badge, which is how the site already
+   marks a highlight. */
 .share-hook {
   margin: 1.25rem 0 0;
-  padding: 0.7rem 0.9rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 0.75rem 0.9rem;
+  background: var(--gold-soft);
+  border: 1px solid #e8c96a;
   border-radius: var(--radius-sm);
-  color: rgba(255, 255, 255, 0.85);
+  color: #6f5615;
   font-size: 0.94rem;
 }
 
@@ -1157,14 +1160,16 @@ body.share-page {
   opacity: 0.72;
 }
 
+/* Reads as a .card: white surface, hairline border, same soft shadow. */
 .share-btn-secondary {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  color: #ffffff;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  color: var(--accent);
 }
 
 .share-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.09);
+  border-color: #cbd5e8;
 }
 
 /* Secondary link grid ---------------------------------------------------- */
@@ -1183,17 +1188,18 @@ body.share-page {
   justify-content: center;
   min-height: 48px;
   padding: 0.6rem 0.7rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  /* The existing .tag treatment, scaled up to a comfortable tap target. */
+  background: var(--accent-soft);
+  border: 1px solid #d4dff0;
   border-radius: var(--radius-sm);
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--accent-link);
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
 }
 
 .share-links a:hover {
-  background: rgba(255, 255, 255, 0.13);
+  background: #e4eaf6;
   text-decoration: none;
 }
 
@@ -1204,19 +1210,18 @@ body.share-page {
 }
 
 .share-full-site a {
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--muted);
   min-height: 44px;
   display: inline-block;
   padding: 0.6rem 0.5rem;
 }
 
 .share-full-site a:hover {
-  color: #ffffff;
+  color: var(--accent-link);
 }
 
-/* Keyboard focus needs to be visible against navy. */
 .share-page a:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--accent-link);
   outline-offset: 3px;
   border-radius: 8px;
 }
@@ -1225,15 +1230,16 @@ body.share-page {
 .share-qr {
   margin-top: 2.5rem;
   padding: 1.4rem 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
   text-align: center;
 }
 
 .share-qr h2 {
   margin: 0 0 0.9rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.07em;
@@ -1252,7 +1258,7 @@ body.share-page {
 
 .share-qr-url {
   margin: 0.85rem 0 0;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
   font-size: 0.88rem;
   letter-spacing: 0.01em;
 }
@@ -1264,7 +1270,7 @@ body.share-page {
 }
 
 .share-redirect a {
-  color: var(--gold);
+  color: var(--accent-link);
   font-weight: 700;
 }
 
