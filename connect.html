@@ -15,16 +15,22 @@
   <link rel="canonical" href="https://ishraqtashdid.com/hello" />
   <meta name="robots" content="noindex" />
 
-  <meta name="theme-color" content="#1e2d5a" />
+  <meta name="theme-color" content="#10192e" />
   <link rel="icon" href="favicon.png" sizes="32x32" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body { margin: 0; background: #efece4; font-family: ui-monospace, monospace; }
+    .wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem; text-align: center; }
+    p { font-size: 0.85rem; letter-spacing: 0.06em; color: #10192e; }
+    a { color: #8a6a1a; }
+  </style>
 
   <!-- replace() rather than assign() so the redirect doesn't trap the back button. -->
   <script>window.location.replace("/hello");</script>
 </head>
-<body class="share-page">
-  <main class="share-wrap share-redirect">
+<body>
+  <div class="wrap">
     <p>Taking you to <a href="/hello">ishraqtashdid.com/hello</a>&hellip;</p>
-  </main>
+  </div>
 </body>
 </html>

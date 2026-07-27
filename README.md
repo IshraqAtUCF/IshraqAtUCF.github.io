@@ -32,32 +32,26 @@ with your latest compiled CV PDF.
 Edit `news.js` and append a new object to `newsItems`.
 The site auto-sorts by `sortDate`.
 
-## Share card (`/hello`)
+## Visiting card (`/hello`) and show page (`/qr`)
 
-A single-screen contact card built for handing out a QR code in person.
-Reachable at both:
+A digital visiting card for meeting people in person. The flow has two sides:
 
-- `ishraqtashdid.com/hello` — canonical page (`hello.html`)
-- `ishraqtashdid.com/connect` — spoken-aloud alias, redirects to `/hello`
+- **`ishraqtashdid.com/qr`** — the page *you* open on your own phone and hold
+  out. It shows only a large QR code. It is intentionally unlinked from the
+  rest of the site and `noindex`ed.
+- **`ishraqtashdid.com/hello`** — where the scan lands: the visiting card
+  itself (no QR on it), with CV / Save contact / LinkedIn / GitHub / Scholar /
+  Email tiles and a minimal link back to the main site in the footer.
+- `ishraqtashdid.com/connect` — spoken-aloud alias, redirects to `/hello`.
 
 GitHub Pages serves `hello.html` at the extensionless `/hello` automatically,
 so no configuration is needed. `connect.html` is a client-side redirect stub
 (meta refresh + JS + visible fallback), because GitHub Pages has no
 server-side redirects.
 
-The page deliberately loads **no web fonts and no third-party scripts** — it
-gets opened on conference wifi, so it must paint from same-origin assets only.
-
-### Before each conference
-
-Edit the one block in `hello.html` marked:
-
-```html
-<!-- CONFERENCE HOOK: swap this one block per event ... -->
-```
-
-That is the "why we're talking" line (currently DAC 2026). Nothing else on the
-page is event-specific.
+Both pages are fully self-contained: the Newsreader and Spline Sans Mono
+fonts are **self-hosted** in `assets/fonts/`, so the pages make zero
+third-party requests — they must paint fast on conference wifi.
 
 ### Regenerate the QR code and other assets
 

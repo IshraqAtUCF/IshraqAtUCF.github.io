@@ -3,103 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ishraq Tashdid | Let's Connect</title>
-  <meta name="description" content="Ishraq Tashdid - Ph.D. student at UCF and Security Research Intern at Intel. Hardware security, formal verification, and LLM-assisted threat modeling. Download my CV or save my contact." />
+  <title>Ishraq Tashdid | Hello</title>
+  <meta name="description" content="Digital card of Ishraq Tashdid - Ph.D. student, UCF ECE; Security Research Intern, Intel. Hardware security, formal verification, and LLM-assisted threat modeling." />
   <link rel="canonical" href="https://ishraqtashdid.com/hello" />
 
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Ishraq Tashdid" />
   <meta property="og:url" content="https://ishraqtashdid.com/hello" />
-  <meta property="og:title" content="Ishraq Tashdid | Let's Connect" />
+  <meta property="og:title" content="Ishraq Tashdid | Hello" />
   <meta property="og:description" content="Ph.D. Student, UCF ECE - Security Research Intern, Intel. Hardware security, formal verification, and LLM-assisted threat modeling." />
   <meta property="og:image" content="https://ishraqtashdid.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ishraq Tashdid | Let's Connect" />
+  <meta name="twitter:title" content="Ishraq Tashdid | Hello" />
   <meta name="twitter:description" content="Ph.D. Student, UCF ECE - Security Research Intern, Intel. Hardware security, formal verification, and LLM-assisted threat modeling." />
   <meta name="twitter:image" content="https://ishraqtashdid.com/assets/og-card.png" />
 
-  <meta name="theme-color" content="#1e2d5a" />
+  <meta name="theme-color" content="#10192e" />
   <link rel="icon" href="favicon.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <!-- No web fonts here on purpose: this page is opened on conference wifi,
-       so it must paint with zero external requests. -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Self-contained page. Fonts are self-hosted (assets/fonts/) so the card
+       still makes zero third-party requests on conference wifi; both files
+       are variable woff2 covering weights 400-500, latin subset. -->
+  <style>
+    @font-face {
+      font-family: "Newsreader";
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url("assets/fonts/newsreader-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Spline Sans Mono";
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url("assets/fonts/spline-sans-mono-latin.woff2") format("woff2");
+    }
+
+    body { margin: 0; background: #efece4; font-family: "Newsreader", Georgia, serif; }
+    .wrap {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      background: radial-gradient(80rem 50rem at 50% -20%, #f7f4ec, #eae6da);
+    }
+    .card {
+      width: min(26rem, 100%);
+      background: #10192e;
+      border-radius: 22px;
+      padding: clamp(1.8rem, 5vw, 2.6rem);
+      box-sizing: border-box;
+      box-shadow: 0 30px 60px rgba(16, 25, 46, 0.28), 0 2px 8px rgba(16, 25, 46, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Soft gold glow in the top corner — a gradient, not a pattern. */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(30rem 18rem at 85% -10%, rgba(201, 168, 76, 0.13), transparent 60%);
+      pointer-events: none;
+    }
+    .card > * { position: relative; }
+
+    .eyebrow { display: flex; align-items: center; justify-content: space-between; }
+    .eyebrow span:first-child {
+      font-family: "Spline Sans Mono", ui-monospace, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c9a84c;
+    }
+    .eyebrow span:last-child { width: 8px; height: 8px; border-radius: 50%; background: #c9a84c; }
+
+    h1 {
+      margin: 0.9rem 0 0;
+      font-size: clamp(2.1rem, 8vw, 2.7rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: #f5f2ea;
+    }
+    .role { margin: 0.7rem 0 0; font-size: 1.06rem; color: rgba(245, 242, 234, 0.65); line-height: 1.5; }
+    .bio {
+      margin: 1.4rem 0 0;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(245, 242, 234, 0.14);
+      font-size: 1rem;
+      color: rgba(245, 242, 234, 0.8);
+      line-height: 1.6;
+    }
+
+    .links { margin-top: 1.6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 46px;
+      padding: 0 0.9rem;
+      border-radius: 12px;
+      border: 1px solid rgba(245, 242, 234, 0.16);
+      color: #f5f2ea;
+      font-family: "Spline Sans Mono", ui-monospace, monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .links a:hover { border-color: #c9a84c; background: rgba(201, 168, 76, 0.08); }
+    .links a b { color: #c9a84c; font-weight: 400; }
+    /* The two "get" actions read slightly stronger than the four "visit" links. */
+    .links a.get { border-color: rgba(201, 168, 76, 0.45); }
+    .links a:focus-visible { outline: 2px solid #c9a84c; outline-offset: 2px; }
+
+    .foot {
+      margin: 1.6rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: "Spline Sans Mono", ui-monospace, monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 242, 234, 0.45);
+    }
+    /* The minimal way home: the domain in the foot is the link to the site. */
+    .foot a { color: rgba(245, 242, 234, 0.45); text-decoration: none; }
+    .foot a:hover { color: #c9a84c; }
+  </style>
 </head>
-<body class="share-page">
-  <!-- Same navy header band as the rest of the site, so a scanned page is
-       recognisably part of it. Brand only, no nav: the full nav wraps to
-       multiple rows on a phone and would push the CTAs below the fold. -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html">Ishraq Tashdid</a>
-    </div>
-  </header>
-
-  <main class="share-wrap">
-    <div class="share-card">
-
-      <section class="share-hero-card">
-        <p class="share-eyebrow">Ph.D. Student, UCF ECE &middot; Security Research Intern, Intel</p>
-        <h1 class="share-name">Ishraq Tashdid</h1>
-        <p class="share-pitch">
-          Hardware security, formal verification, and LLM-assisted threat
-          modeling across hardware&ndash;firmware&ndash;software boundaries.
-        </p>
-
-        <!-- CONFERENCE HOOK: swap this one block per event (HOST 2026, ICCAD, etc.). -->
-        <p class="share-hook">
-          <span class="share-hook-badge">DAC 2026</span>
-          <em>ATLAS</em> accepted &middot; DAC Young Fellow
-        </p>
-        <!-- /CONFERENCE HOOK -->
-      </section>
-
-      <div class="share-actions">
-        <a class="share-btn share-btn-primary"
-           href="assets/Ishraq_Tashdid_CV.pdf" download>
-          Download CV <span class="share-btn-note">PDF</span>
-        </a>
-        <!-- No `download` attribute on the .vcf: iOS Safari hands a plain link
-             to the Contacts importer, but with `download` it just drops the
-             file into Files instead. -->
-        <a class="share-btn share-btn-secondary"
-           href="assets/Ishraq_Tashdid.vcf">
-          Save my contact
-        </a>
-      </div>
-
-      <ul class="share-links">
-        <li>
-          <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </li>
-        <li>
-          <a href="https://scholar.google.com/citations?user=gYcWmKYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </li>
-        <li>
-          <a href="mailto:ishraq.tashdid@ucf.edu">Email</a>
-        </li>
-      </ul>
-
-      <p class="share-full-site">
-        <a href="index.html">View full site &rarr;</a>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <div class="eyebrow"><span>Hello, I&rsquo;m</span><span></span></div>
+      <h1>Ishraq Tashdid</h1>
+      <p class="role">Ph.D. student, UCF ECE &middot; Security Research Intern, Intel</p>
+      <p class="bio">
+        Hardware security, formal verification &amp; LLM-assisted threat modeling
+        across hardware, firmware and software.
       </p>
-
-    </div>
-
-    <!-- Below the fold: lets you pull this page up on your own phone and let
-         someone scan your screen, so no printed code is needed. -->
-    <section class="share-qr" aria-labelledby="share-qr-title">
-      <h2 id="share-qr-title">Share this page</h2>
-      <img src="assets/qr-hello.svg" alt="QR code linking to ishraqtashdid.com/hello"
-           width="180" height="180" loading="lazy" decoding="async" />
-      <p class="share-qr-url">ishraqtashdid.com/hello</p>
-    </section>
-  </main>
+      <nav class="links" aria-label="Links">
+        <a class="get" href="assets/Ishraq_Tashdid_CV.pdf" download><span>CV</span><b>&darr;</b></a>
+        <!-- No `download` attribute here: iOS Safari then hands the .vcf to
+             the Contacts importer instead of saving it to Files. -->
+        <a class="get" href="assets/Ishraq_Tashdid.vcf"><span>Save contact</span><b>&darr;</b></a>
+        <a href="https://www.linkedin.com/in/ishraqtashdid" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><b>&#8599;</b></a>
+        <a href="https://github.com/IshraqAtUCF" target="_blank" rel="noopener noreferrer"><span>GitHub</span><b>&#8599;</b></a>
+        <a href="https://scholar.google.com/citations?user=gYcWmKYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><span>Scholar</span><b>&#8599;</b></a>
+        <a href="mailto:ishraq.tashdid@ucf.edu"><span>Email</span><b>&#8599;</b></a>
+      </nav>
+      <p class="foot"><span>Orlando, FL</span><a href="index.html">ishraqtashdid.com</a></p>
+    </main>
+  </div>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scan | Ishraq Tashdid</title>
+  <!-- This page is for showing on your own phone so someone can scan it.
+       It is deliberately not linked from anywhere on the site, and noindex
+       keeps it out of search results. Scanners land on /hello. -->
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#10192e" />
+  <link rel="icon" href="favicon.png" sizes="32x32" />
+
+  <style>
+    @font-face {
+      font-family: "Spline Sans Mono";
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url("assets/fonts/spline-sans-mono-latin.woff2") format("woff2");
+    }
+
+    body { margin: 0; background: #efece4; font-family: "Spline Sans Mono", ui-monospace, monospace; }
+    .wrap {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      background: radial-gradient(80rem 50rem at 50% -20%, #f7f4ec, #eae6da);
+    }
+    .card {
+      width: min(22rem, 100%);
+      background: #10192e;
+      border-radius: 22px;
+      padding: clamp(1.6rem, 5vw, 2.2rem);
+      box-sizing: border-box;
+      box-shadow: 0 30px 60px rgba(16, 25, 46, 0.28), 0 2px 8px rgba(16, 25, 46, 0.18);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(30rem 18rem at 85% -10%, rgba(201, 168, 76, 0.13), transparent 60%);
+      pointer-events: none;
+    }
+    .card > * { position: relative; }
+
+    .label {
+      margin: 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c9a84c;
+    }
+    /* White panel behind the code doubles as its quiet zone — required for
+       reliable scanning, so keep it white and uncropped. */
+    .qr {
+      display: block;
+      width: 100%;
+      max-width: 264px;
+      margin: 1.2rem auto 0;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    .url { margin: 1.2rem 0 0; font-size: 0.78rem; letter-spacing: 0.1em; color: rgba(245, 242, 234, 0.65); }
+    .peek { margin: 1.4rem 0 0; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .peek a { color: rgba(245, 242, 234, 0.4); text-decoration: none; }
+    .peek a:hover { color: #c9a84c; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <p class="label">Scan for my card</p>
+      <img class="qr" src="assets/qr-hello.svg" alt="QR code linking to ishraqtashdid.com/hello" width="264" height="264" decoding="async" />
+      <p class="url">ishraqtashdid.com/hello</p>
+      <p class="peek"><a href="hello.html">view the card &rarr;</a></p>
+    </main>
+  </div>
+</body>
+</html>
