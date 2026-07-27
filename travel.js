@@ -33,6 +33,29 @@ const photos = [
     location: "Vail, CO",
     category: "State",
   },
+  // Slots 5-8. Slot 7 is a wide 3:2 hero (nth-child 3n+1), so the
+  // cinematic Hurricane Ridge shot goes there; the gallery closes on the
+  // seagull's negative space.
+  {
+    src: "assets/travel/kings-canyon.jpg",
+    location: "Kings Canyon NP, CA",
+    category: "National Park",
+  },
+  {
+    src: "assets/travel/mount-shasta.jpg",
+    location: "Mount Shasta City, CA",
+    category: "State",
+  },
+  {
+    src: "assets/travel/hurricane-ridge.jpg",
+    location: "Hurricane Ridge, Olympic NP",
+    category: "National Park",
+  },
+  {
+    src: "assets/travel/bainbridge-island.jpg",
+    location: "Bainbridge Island, WA",
+    category: "State",
+  },
 ];
 
 // ── Helpers ───────────────────────────────────────────────
