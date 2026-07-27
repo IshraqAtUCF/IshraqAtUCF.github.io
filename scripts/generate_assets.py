@@ -103,38 +103,32 @@ def build_og_card() -> None:
     print(f"  og-card.png          {width}x{height}px")
 
 
-def _icon(size: int) -> Image.Image:
-    """Navy rounded square with a gold 'IT' monogram.
-
-    Rendered with Pillow rather than hand-written SVG <text> so the glyphs
-    rasterize identically everywhere instead of depending on whatever serif
-    the viewer's OS happens to resolve.
-    """
-    scale = 4  # supersample, then downscale for clean edges
-    box = size * scale
-    img = Image.new("RGBA", (box, box), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(img)
-
-    radius = int(box * 0.22)
-    draw.rounded_rectangle([0, 0, box - 1, box - 1], radius=radius, fill=NAVY)
-
-    font = _font(FONT_SERIF_BOLD, int(box * 0.52))
-    text = "IT"
-    l, t, r, b = draw.textbbox((0, 0), text, font=font)
-    draw.text(((box - (r - l)) / 2 - l, (box - (b - t)) / 2 - t),
-              text, font=font, fill=GOLD)
-
-    return img.resize((size, size), Image.LANCZOS)
-
-
 def build_icons() -> None:
-    _icon(32).save(ROOT / "favicon.png", optimize=True)
-    # iOS home-screen icons must not be transparent.
-    touch = Image.new("RGB", (180, 180), NAVY)
-    touch.paste(_icon(180), (0, 0), _icon(180))
-    touch.save(ROOT / "apple-touch-icon.png", optimize=True)
-    print("  favicon.png          32x32px")
-    print("  apple-touch-icon.png 180x180px")
+    """Rasterize the PNG fallbacks from favicon.svg (the site logo).
+
+    favicon.svg is the canonical mark — the circuit-trace letterform picked
+    by Ishraq. Edit the SVG, then re-run this to refresh the PNGs; never
+    draw the icon here.
+    """
+    import io
+
+    import cairosvg  # pip install cairosvg
+
+    svg = (ROOT / "favicon.svg").read_bytes()
+
+    png32 = cairosvg.svg2png(bytestring=svg, output_width=32, output_height=32)
+    Image.open(io.BytesIO(png32)).save(ROOT / "favicon.png", optimize=True)
+
+    # iOS home-screen icons must be opaque; flatten onto white (iOS applies
+    # its own corner rounding).
+    png180 = cairosvg.svg2png(bytestring=svg, output_width=180, output_height=180)
+    touch = Image.open(io.BytesIO(png180)).convert("RGBA")
+    flat = Image.new("RGB", touch.size, "#ffffff")
+    flat.paste(touch, mask=touch.split()[3])
+    flat.save(ROOT / "apple-touch-icon.png", optimize=True)
+
+    print("  favicon.png          32x32px  (from favicon.svg)")
+    print("  apple-touch-icon.png 180x180px (from favicon.svg)")
 
 
 def build_vcard() -> None:
