@@ -1,3 +1,13 @@
+/* Signature script for the site wordmark. Self-hosted to match the
+   Newsreader / Spline Sans Mono pattern used by hello.html — no third-party request. */
+@font-face {
+  font-family: "Sacramento";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/sacramento-latin.woff2") format("woff2");
+}
+
 :root {
   --bg:          #faf8f2;
   --surface:     #ffffff;
@@ -63,9 +73,14 @@ a:hover {
 }
 
 .brand {
-  font-weight: 700;
+  font-family: "Sacramento", "Snell Roundhand", "Brush Script MT", cursive;
+  font-weight: 400;
+  font-size: 1.85rem;
+  /* Sacramento's ascenders and swashes overflow a tight line box, so the
+     wordmark needs a roomier one or it clips against the header edge. */
+  line-height: 1.45;
   color: #ffffff;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.4px;
 }
 
 .brand:hover {
