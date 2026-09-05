@@ -23,10 +23,32 @@ Your site will be available at:
 Use any repo name, then enable **Settings → Pages** and deploy from **main / root**.
 
 ## Update your CV
-Replace:
-`assets/Ishraq_Tashdid_CV.pdf`
 
-with your latest compiled CV PDF.
+The CV is kept as LaTeX source in the repo, so updates are a source edit plus a
+recompile rather than a binary re-upload:
+
+| File | Role |
+| --- | --- |
+| `assets/cv/Ishraq_Tashdid_CV.tex` | the source of truth — edit this |
+| `assets/Ishraq_Tashdid_CV.pdf` | the compiled download the site links to |
+
+```bash
+cd assets/cv
+pdflatex -interaction=nonstopmode Ishraq_Tashdid_CV.tex   # run twice
+pdflatex -interaction=nonstopmode Ishraq_Tashdid_CV.tex
+cp Ishraq_Tashdid_CV.pdf ../Ishraq_Tashdid_CV.pdf
+```
+
+Requires `texlive-latex-base`, `texlive-latex-recommended`, `texlive-latex-extra`,
+and `texlive-fonts-recommended`.
+
+The download filename is deliberately **stable** (`Ishraq_Tashdid_CV.pdf`) so the
+`/hello` visiting card, the QR flow, and any previously shared links keep working
+across revisions. The revision date lives *inside* the PDF instead — update the
+`Last updated:` line at the bottom of the `.tex` when you make changes.
+
+When you change the CV, also update `cv.html`, which mirrors the same content as
+a browsable page.
 
 ## Add news
 Edit `news.js` and append a new object to `newsItems`.

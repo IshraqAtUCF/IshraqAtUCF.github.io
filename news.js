@@ -125,6 +125,30 @@ const newsItems = [
       "Received the UCF ECE Outstanding Student Researcher Award on May 7, 2026, in recognition of outstanding contributions to research during FY 2025–26."
   },
   {
+    sortDate: "2025-01-15",
+    dateLabel: "2025",
+    category: "Grant",
+    title: "Contributed to SecureOpenROAD proposal — NSF Safe-OSE",
+    description:
+      "Contributed to the technical research direction of SecureOpenROAD, submitted to the NSF Safety, Security, and Privacy in Open Source Ecosystems program (Safe-OSE, NSF 24-608), PI Dr. Sazadur Rahman, in collaboration with the OpenROAD Initiative (ORI)."
+  },
+  {
+    sortDate: "2025-06-15",
+    dateLabel: "2025",
+    category: "Grant",
+    title: "Contributed to ASCEND proposal — NSF SaTC 2.0",
+    description:
+      "Contributed to the technical research direction of ASCEND, submitted to the NSF Secure and Trustworthy Cyberspace (SaTC 2.0) program, PI Dr. Sazadur Rahman — extending authentication and trust-architecture methodology from InterPUF, SAFE-SiP, and AuthenTree. Pending review."
+  },
+  {
+    sortDate: "2025-11-20",
+    dateLabel: "2025",
+    category: "Service",
+    title: "External Reviewer — Design Automation Conference",
+    description:
+      "Served as an external reviewer for the Design Automation Conference (DAC 2026 and DAC 2025), and for IEEE Design & Test, an archival IEEE transactions-family journal."
+  },
+  {
     sortDate: "2026-05-18",
     dateLabel: "May 2026",
     category: "Industry",
@@ -132,6 +156,38 @@ const newsItems = [
     description:
       "Began as an XPU Security Research Intern at Intel Corporation in Folsom, CA on May 18, 2026. Spending the summer working on cutting-edge processor security research.",
     isPinnedLatest: true
+  },
+  {
+    sortDate: "2026-04-20",
+    dateLabel: "2026",
+    category: "Patent",
+    title: "Provisional patent filed on the ATLAS framework",
+    description:
+      "Filed a provisional patent application on the ATLAS LLM-driven threat-modeling and automated security-property generation framework (DAC 2026), with Dr. Sazadur Rahman and Kimia Tasnia."
+  },
+  {
+    sortDate: "2026-06-15",
+    dateLabel: "2026",
+    category: "Grant",
+    title: "Contributed to DOE Genesis Mission proposal",
+    description:
+      "Contributed to proposal development and technical research direction for the DOE Genesis Mission: Transforming Science and Energy with AI (RFA DE-FOA-0003612), PI Dr. Sazadur Rahman, in collaboration with Silvaco Inc. — targeting the semiconductors and microelectronics challenge area. Pending review."
+  },
+  {
+    sortDate: "2026-07-15",
+    dateLabel: "Jul 2026",
+    category: "Talk",
+    title: "Invited talk at the DAC 2026 Open-Source EDA Birds-of-a-Feather",
+    description:
+      "Gave an invited rapid-fire presentation, \"Security Challenges and Opportunities in the Open-Source EDA Ecosystem,\" at the Open-Source EDA, Data and Collaboration Summit at DAC 2026, Long Beach, CA — organized by UC San Diego, Google, and Precision Innovations."
+  },
+  {
+    sortDate: "2026-09-01",
+    dateLabel: "Sep 2026",
+    category: "Service",
+    title: "Joined the program committee of AAAI-26 Fall Symposium Series (FSS-26)",
+    description:
+      "Invited to serve on the program committee of the AAAI-26 Fall Symposium Series (FSS-26), extending peer-review service beyond hardware security and EDA into the artificial intelligence community."
   }
 ];
 
@@ -146,6 +202,7 @@ function getPinnedLatest(items) {
 function getTagClass(category) {
   if (category === "Award") return "news-tag news-tag-award";
   if (category === "Industry") return "news-tag news-tag-industry";
+  if (category === "Patent" || category === "Grant") return "news-tag news-tag-award";
   return "news-tag";
 }
 

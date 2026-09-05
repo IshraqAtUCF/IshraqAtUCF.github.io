@@ -1,0 +1,7 @@
+# LaTeX build artifacts (from compiling assets/cv/Ishraq_Tashdid_CV.tex in place)
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
