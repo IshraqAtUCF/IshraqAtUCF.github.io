@@ -91,10 +91,10 @@ def build_og_card() -> None:
 
     title_y = 312
     draw.text((left, title_y),
-              "Ph.D. Student, UCF ECE  ·  Security Research Intern, Intel",
+              "Ph.D. Candidate, Computer Engineering  ·  UCF",
               font=title_font, fill=MUTED)
     draw.text((left, title_y + 54),
-              "Hardware security · Formal verification · LLM-assisted threat modeling",
+              "Hardware security · AI-assisted verification · Formal methods",
               font=detail_font, fill=MUTED)
 
     draw.text((left, 500), "ishraqtashdid.com", font=url_font, fill=GOLD)
@@ -142,7 +142,7 @@ def build_vcard() -> None:
         "VERSION:3.0",
         "N:Tashdid;Ishraq;;;",
         "FN:Ishraq Tashdid",
-        "TITLE:Ph.D. Student, Computer Engineering",
+        "TITLE:Ph.D. Candidate, Computer Engineering",
         "ORG:University of Central Florida",
         "EMAIL;type=INTERNET;type=WORK;type=pref:ishraq.tashdid@ucf.edu",
         "EMAIL;type=INTERNET;type=HOME:tashdid.ishraq@gmail.com",
@@ -151,8 +151,8 @@ def build_vcard() -> None:
         "URL:https://ishraqtashdid.com",
         "X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/ishraqtashdid",
         "X-SOCIALPROFILE;type=github:https://github.com/IshraqAtUCF",
-        "NOTE:SoC security\\, formal verification\\, and LLM-assisted threat "
-        "modeling. UCF Trustees Doctoral Fellow. ATLAS @ DAC 2026\\; "
+        "NOTE:Hardware security\\, AI-assisted verification\\, and formal "
+        "methods. UCF Trustee's Doctoral Fellow. ATLAS @ DAC 2026\\; "
         "DAC Young Fellow.",
         "END:VCARD",
     ]

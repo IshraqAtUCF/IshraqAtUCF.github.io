@@ -40,12 +40,13 @@ cp Ishraq_Tashdid_CV.pdf ../Ishraq_Tashdid_CV.pdf
 ```
 
 Requires `texlive-latex-base`, `texlive-latex-recommended`, `texlive-latex-extra`,
-and `texlive-fonts-recommended`.
+`texlive-fonts-recommended`, and `texlive-fonts-extra` (for the Libertinus Serif
+typeface the CV is set in).
 
 The download filename is deliberately **stable** (`Ishraq_Tashdid_CV.pdf`) so the
 `/hello` visiting card, the QR flow, and any previously shared links keep working
-across revisions. The revision date lives *inside* the PDF instead — update the
-`Last updated:` line at the bottom of the `.tex` when you make changes.
+across revisions. The revision date lives *inside* the PDF instead (its creation
+date in the document properties).
 
 When you change the CV, also update `cv.html`, which mirrors the same content as
 a browsable page.

@@ -16,7 +16,10 @@ const projects = [
       "Automates the full pipeline from hardware threat modeling to formal security property generation using large language models. Ingests CWE/CVE/CAPEC databases to produce SystemVerilog assertions verified end-to-end by JasperGold — the ATLAS framework.",
     tags: ["Python", "LLM", "SystemVerilog", "JasperGold", "Formal Verification", "Threat Modeling"],
     links: {
-      paper: "https://arxiv.org/abs/2603.01170",
+      papers: [
+        { label: "DAC 2026 Paper", url: "https://doi.org/10.1145/3770743.3804400" },
+        { label: "arXiv",          url: "https://arxiv.org/abs/2603.01170" }
+      ],
       github: null,
       demo: null
     },
@@ -70,6 +73,70 @@ const projects = [
     tags: ["SystemVerilog", "eFPGA", "Logic Obfuscation", "SoC Security", "Post-Fabrication"],
     links: {
       paper: "https://arxiv.org/abs/2508.04516",
+      github: null,
+      demo: null
+    },
+    featured: false
+  },
+  {
+    id: "secure-openroad",
+    title: "SecureOpenROAD: Security Assurance for Open-Source Chip Design",
+    category: "Research",
+    status: "Active",
+    venue: "Sept 2026 – Present",
+    description:
+      "Security-aware open-source semiconductor implementation: evaluating whether security intent survives synthesis and physical design in an open RTL-to-GDS flow, and defining the security-critical metrics used to measure it. These metrics shaped the methodology of the SecureOpenROAD research proposal.",
+    tags: ["OpenROAD", "Yosys", "SymbiYosys", "Physical Design", "Security Metrics", "Open-Source EDA"],
+    links: {
+      paper: null,
+      github: null,
+      demo: null
+    },
+    featured: false
+  },
+  {
+    id: "aegis",
+    title: "Aegis: Evidence-Grounded Hardware Security Evaluation",
+    category: "Research",
+    status: "In Progress",
+    venue: "Apr 2026 – Present · Manuscript in preparation",
+    description:
+      "Scalable hardware-vulnerability identification and validation. Aegis grounds AI-assisted reasoning in evidence from structural analysis, formal verification, directed simulation, and coverage-driven testing, building on ATLAS.",
+    tags: ["LLM", "Formal Verification", "Directed Simulation", "Coverage-Driven Testing", "Vulnerability Validation"],
+    links: {
+      paper: null,
+      github: null,
+      demo: null
+    },
+    featured: false
+  },
+  {
+    id: "secure-sdc",
+    title: "Secure-SDC: Security Knowledge Across Synthesis",
+    category: "Research",
+    status: "In Progress",
+    venue: "Manuscript in preparation",
+    description:
+      "Preserves and validates security knowledge across synthesis transformations, including security assets, policies, assumptions, countermeasures, and verification obligations, so that the security properties established at RTL can still be checked after synthesis.",
+    tags: ["Logic Synthesis", "Security Policies", "Verification Obligations", "Security-Aware EDA"],
+    links: {
+      paper: null,
+      github: null,
+      demo: null
+    },
+    featured: false
+  },
+  {
+    id: "secure-test-heterogeneous",
+    title: "Security-Aware Test &amp; Verification for Chiplet Systems",
+    category: "Research",
+    status: "In Progress",
+    venue: "Manuscript in preparation",
+    description:
+      "Secure test, authentication, and verification mechanisms for heterogeneous and chiplet-based systems. Protects authentication, test, and inter-chiplet information in multi-vendor environments, extending the InterPUF, RoutePUF, AuthenTree, and SAFE-SiP line of work.",
+    tags: ["Chiplet Security", "Secure Test / DFT", "Authentication", "Heterogeneous Integration"],
+    links: {
+      paper: null,
       github: null,
       demo: null
     },

@@ -90,7 +90,7 @@ const newsItems = [
     category: "Publication",
     title: "RoutePUF accepted at GOMACTech 2026",
     description:
-      "RoutePUF — a routing-based physically unclonable function for secure interposer authentication in chiplet systems — accepted to GOMACTech 2026."
+      "RoutePUF — an interposer-resident delay PUF with multi-party computation for zero-trust chiplet SiPs, with Tasnuva Farheen, Navid Asadi, and Dr. Sazadur Rahman — accepted to GOMACTech 2026."
   },
   {
     sortDate: "2026-03-20",
@@ -138,16 +138,15 @@ const newsItems = [
     category: "Industry",
     title: "Started as XPU Security Research Intern at Intel",
     description:
-      "Began as an XPU Security Research Intern at Intel Corporation in Folsom, CA on May 18, 2026. Spending the summer working on cutting-edge processor security research.",
-    isPinnedLatest: true
+      "Began as an XPU Security Research Intern at Intel Corporation in Folsom, CA on May 18, 2026, working on security research for next-generation XPU/accelerator architectures."
   },
   {
-    sortDate: "2026-04-20",
-    dateLabel: "2026",
+    sortDate: "2026-10-22",
+    dateLabel: "Oct 2026",
     category: "Patent",
-    title: "Provisional patent filed on the ATLAS framework",
+    title: "U.S. provisional patent application on ATLAS authorized for filing",
     description:
-      "Filed a provisional patent application on the ATLAS LLM-driven threat-modeling and automated security-property generation framework (DAC 2026), with Dr. Sazadur Rahman and Kimia Tasnia."
+      "UCF authorized filing of a U.S. provisional patent application, <em>“Systems and Methods for AI-Assisted Threat-to-Assertion Generation in Hardware Security Verification,”</em> covering the ATLAS framework (DAC 2026), with Dr. Sazadur Rahman and Kimia Tasnia as co-inventors."
   },
   {
     sortDate: "2026-07-15",
@@ -161,9 +160,50 @@ const newsItems = [
     sortDate: "2026-09-01",
     dateLabel: "Sep 2026",
     category: "Service",
-    title: "Joined the program committee of AAAI-26 Fall Symposium Series (FSS-26)",
+    title: "Joined the program committee of Trustworthy Agentic Systems (TAS 2026)",
     description:
-      "Invited to serve on the program committee of the AAAI-26 Fall Symposium Series (FSS-26), extending peer-review service beyond hardware security and EDA into the artificial intelligence community."
+      "Serving on the program committee of Trustworthy Agentic Systems (TAS 2026), part of the AAAI 2026 Fall Symposium Series, extending peer-review service beyond hardware security and EDA into the artificial intelligence community."
+  },
+  {
+    sortDate: "2026-08-01",
+    dateLabel: "Aug 2026",
+    category: "Milestone",
+    title: "Earned M.S. in Computer Engineering from UCF",
+    description:
+      "My M.S. in Computer Engineering was conferred on August 1, 2026, on the way to the Ph.D. (expected January 2028)."
+  },
+  {
+    sortDate: "2026-09-02",
+    dateLabel: "Sep 2026",
+    category: "Research",
+    title: "Started SecureOpenROAD research",
+    description:
+      "Began work on SecureOpenROAD, which studies security assurance across synthesis and physical implementation in open-source semiconductor design flows built on Yosys and OpenROAD. Identified security-critical metrics for design flows that helped shape the methodology in the submitted research proposal."
+  },
+  {
+    sortDate: "2026-09-25",
+    dateLabel: "Sep 2026",
+    category: "Industry",
+    title: "Completed XPU Security Research Internship at Intel",
+    description:
+      "Wrapped up my internship at Intel Corporation in Folsom, CA (May 18 – Sep 25, 2026), where I applied AI-assisted security analysis, hardware vulnerability reasoning, and rigorous verification to security problems in next-generation XPU/accelerator architectures."
+  },
+  {
+    sortDate: "2026-10-16",
+    dateLabel: "Oct 2026",
+    category: "Publication",
+    title: "Book chapter published by Springer",
+    description:
+      "Our chapter <em>“Introduction to Large Language Models (LLMs),”</em> with Kimia Tasnia and Dr. Sazadur Rahman, is now published online in the Springer book <em>LLM for SoC Design and Security</em> (pp. 31–59). <a href=\"https://doi.org/10.1007/978-3-032-34116-7_2\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1007/978-3-032-34116-7_2 ↗</a>"
+  },
+  {
+    sortDate: "2026-10-29",
+    dateLabel: "Oct 2026",
+    category: "Talk",
+    title: "Invited speaker at the IEEE UCF Student Branch General Body Meeting",
+    description:
+      "Spoke at the IEEE UCF Student Branch General Body Meeting on October 29, 2026, about my experience as an XPU Security Research Intern at Intel, formal verification and hardware security, and the transition from academic research to industry. It was a casual talk followed by an open Q&amp;A with students on early-career questions.",
+    isPinnedLatest: true
   }
 ];
 function sortNewsDescending(items) {
